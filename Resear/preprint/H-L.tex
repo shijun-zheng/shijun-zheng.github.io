@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+%\newcommand{\norm}[1]{ \left|  #1 \right| }
+%\newcommand{\ifof}{\Leftrightarrow}
+
+%\renewcommand{\Re}{{\mbox{Re}}}
+%\def\bs{\begin{split}}
+
+%\def\dir{{\mbox{\rm dir}}}
+%\def\dist{{\mbox{\rm dist}}}
+
+%\def\eps{\varepsilon}
+\def\vphi{\varphi}
+\def\lam{\lambda}
+%\def\Om{\Omega}
+\def\de{\delta}
+%\def\sh{\sinh}
+%\def\ch{\cosh}
+%\def\th{\tanh}
+%\def\F{{\cal F}}
+\newcommand{\scr}{\mathscr}
+\newcommand{\ud}{\mathrm{d}}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+
+\newtheorem{remarks}[subsection]{Remarks}
+\newtheorem{definition}[subsection]{Definition}
+
+%\include{psfig}
+
+\title{$ L^p$ estimates for the iterated Hardy-Littlewood maximal operator}
+\author{Shijun Zheng \\
+        {\normalsize {\sl Department of Mathematics }} \\
+        {\normalsize {\sl University of New Mexico }}\\
+        {\normalsize {\sl Albuquerque, NM 87131}}\\
+        {\normalsize {\sl USA}}\\
+and\\      
+{Weiyi Su}\\
+    {\normalsize {\sl Department of Mathematics }} \\
+        {\normalsize {\sl Nanjing University}}\\
+        {\normalsize {\sl Nanjing, 210093 }}\\
+        {\normalsize {\sl China, P.R.}}\\   
+        }
+\date{January 10, 1996}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+
+%\begin{review}
+$\mathbf{Mathematical\; Review}$ ({\em Approx. Theory and Its Applications}, {\bf 14}(3),
+1998, 36-54)
+
+Let $f$ be a locally integrable function in the $n$-dimensional Euclidean space $ R^n$ and define the Hardy-Littlewood maximal function as follows:
+$Mf(x)=\sup|Q|^{-1}\int_Q|f|$, where the sup is taken over all the balls $Q$ centered at $x$. The $k$th iteration of $M$ is defined by induction:
+$M^kf(x)=M(M^{k-1}f)(x)$. The main result of the paper can be formulated as follows: Theorem 2.3: (1) If $1<p<\infty$, then the $L^p$ norms of $f$ and $M^kf$
+are equivalent for $k\geq1$. Let $f\in L^1( R^n), {\rm supp}\,f\subset B$, where $B$ is a finite ball; then (2) for $p=1, \int_BM^kf<\infty$ iff
+$\int_B|f|(\log|f|)^k<\infty$, and (3) for $0<p<1,\ \int_B(M^kf)^p<\infty$ iff $\int_B|f|(\log|f|)^{k-1}<\infty$. 
+
+The second part of the paper is devoted to the generalizations of these and similar results to the case of linear spaces over local fields.
+
+%\end{review}
+
+\begin{abstract}
+
+In light of two measure estimate inequalities from \cite{L} for the
+iterated Hardy-Littlewood maximal operator $M^k f$, certain
+equivalence between $ M^k f$ and the Zygmund class $ L\log^a L  $ are
+established on $\mathbb{R}^n$, so that we generalize Stein's $ L\log L
+$ theorem. In Section 3, a simple induction enables us to prove such
+extensions on $K^n$, the n-dimensional linear space over a local field $K$,  
+without recoursing to Leckband's result.
+
+\end{abstract}
+
+
+\section{Introduction}
+
+Using the argument of nonincreasing rearrangement of $f$, Leckband
+obtained (for technique reasons, we record as follows):
+
+{\bf Theorem L} Let $\lam >0$ and $k\in \mathbb{N} $. Then there exist
+constants $A>1$ and $0<B<1$ dependent only on $n$, $k$ so that
+$$ 
+(i) \qquad |\{ x\in \mathbb{R}^n: M^k f(x)>\lam  \} | \le
+A\int_{\{|f|>\lam /A   \} } \frac{|f(x)|}{\lam } (1+ \log^+\frac{|f(x)|}{\lam }  )^{k-1}dx, 
+$$
+
+$$  
+(ii) \qquad |\{ x\in \mathbb{R}^n: M^k f(x)>B \lam  \} | \le
+A\int_{\{|f|>\lam  \} } \frac{|f(x)|}{\lam } (1+ \log^+\frac{|f(x)|}{B\lam }  )^{k-1}dx, 
+$$
+where the set $\{ g>\lam \} =\{ x\in \mathbb{R}^n: g(x)>\lam \}$ and
+the function $ \log^+ x = \max\{\log x,0 \}, x\ge 0  $.
+
+\vspace{0.2in}
+
+The following pointwise estimate in P\'erez\cite{Perez} may have intimate relation with
+Leckband inequality above.
+
+For $k=1,2,\dots$, 
+$$  M^{k+1} f(x) \sim  M_{\vphi_k } f(x),$$
+where $ \vphi_k(t)= t(1+\log^+t)^k $.
+
+
+\vspace{.4in}
+
+Let $(X,d, \mu)$ be a space of homogeneous type, where $d$ is a
+quasi-metric on the set $X$ and $\mu$ is a doubling Borel measure;
+moreover, $\mu(B(x,r))<\infty$, $ B(x,r)=\{y\in X: d(x,y)<r \} $.  
+
+Macias and Segovia showed that there exists a quasi-metric $\rho$,
+generating the same topology as $d$. Among other properties,
+there is a $\delta_0>0$ such that $\rho (x,y)^{\delta_0} $ is a metric
+on $X$. (When $X=\mathbb{R}^n$, $d(x,y)=|x-y|$, we may take $\rho (x,y)=|x-y|^n$,
+then $\delta_0 =1/n$.
+
+%\section{ $L^p$ estimates for $M^k f$ on $\mathbb{R}^n$}
+
+Note.
+%\section{Appendix C: Kernel formula} 
+%\input{appendC.tex}  
+
+\begin{thebibliography}{99}
+%\input{ref.tex}
+\bibitem{HanHof} 
+Y.S. Han and S.Hofmann, $T1$ theorems for Besov and Triebel-Lizorkin spaces,
+{\em Tran.Amer.Math.Soc.}, {\bf 337}(1993), no.2, 839-853.
+
+\bibitem{L}
+Leckband, M. A. A note on maximal operators and reversible weak type
+inequalities, {\em Proc. Amer. Math. Soc.} {\bf 92} (1984), no. 1, 19--26.
+
+\bibitem{LN}
+Leckband, M. A.; Neugebauer, C. J. Weighted iterates and variants of
+the Hardy-Littlewood maximal operator,
+{\em Trans. Amer. Math. Soc.}, {\bf 279}(1983), no. 1, 51--61.
+
+\bibitem{MacS}
+Mac\'ias, R. A. and Segovia, C.  Lipschitz functions on spaces of
+homogeneous type. {\em Adv. in Math.}, {\bf 33} (1979), no. 3, 257--270.
+
+\bibitem{Perez}
+P\'erez, Carlos, Endpoint estimates for commutators of singular integral
+operators, {\em J. Funct. Anal}. {\bf 128} (1995), no. 1, 163--185. 
+
+
+\bibitem{Perez2}
+P\'erez, C. On a theorem of Muckenhoupt and Wheeden and a weighted
+inequality related to Schr\"odinger operators, {\em
+Trans. Amer. Math. Soc.}, {\bf 340} (1993), no. 2, 549--562.
+
+\bibitem{QDeng}
+Qiu, D.W and Deng, D.G., The $T(1)$ theorems and commutators on spaces
+of homogeneous type, 
+
+
+\end{thebibliography}
+
+
+
+\end{document} 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

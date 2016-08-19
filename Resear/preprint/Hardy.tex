@@ -1,0 +1,545 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+\usepackage[mathscr]{eucal}
+\usepackage{eucal} %(with mathscr option; Euler script alphabet)
+%\usepackage{eufrak} 
+%\renewcommand{\Re}{{\mbox{Re}}}
+
+%\def\eps{\varepsilon}
+\def\vphi{\varphi}
+\def\lam{\lambda}
+\def\Om{\Omega}
+\def\de{\delta}
+%\def\sh{\sinh}
+%\def\ch{\cosh}
+%\def\th{\tanh}
+%\def\F{{\cal F}}
+\newcommand{\scr}{\mathscr}
+\newcommand{\ud}{\mathrm{d}}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+
+\newtheorem{remarks}[subsection]{Remarks}
+\newtheorem{definition}[subsection]{Definition}
+
+%\include{psfig}
+
+\title{Multipliers of Hardy spaces on local fields}
+\author{Shijun Zheng \\
+        {\normalsize {\sl Department of Mathematics }} \\
+        {\normalsize {\sl University of Maryland }}\\
+        {\normalsize {\sl College Park, MD 20742}}\\
+        {\normalsize {\sl USA}}\\
+}
+%and\\      
+%{}\\
+%    {\normalsize {\sl Department of Mathematics }} \\
+%        {\normalsize {\sl Nanjing University}}\\
+%        {\normalsize {\sl Nanjing, 210093 }}\\
+%        {\normalsize {\sl China, P.R.}}\\   
+        
+%\date{}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+
+
+\begin{abstract}
+
+ In Section 3, a simple induction enables us to prove such
+extensions on $K^n$, the $n$-dimensional linear space over a local field $K$,  
+
+\end{abstract}
+
+
+\section{Introduction}
+
+Preliminary.  $K$ locally compact, totally disconnected, nondiscrete
+(complete) field.  If $char\; K=p$, it is a field of formal Laurent
+series over $GF(q)$, the Galois field, $q=p^c $. If $char\; K=0 $, then
+$K$  is either a $p$-adic field or a finite algebraic extension of
+such a field.  Every $x\in {\cal P}^s:=\{ |x|\le q^{-s} \} =\ss^s {\cal O}$.
+$\ss$ is the prime (irreducible ) element in $K$. $\{ {\cal P}^s
+\}_{s\in \mathbb{Z}}$ neighborhood system in $K$.
+ 
+Every $x$ has a unique representation
+$$
+x=\sum_{\ell=s }^\infty x_\ell \ss^\ell; 
+$$
+norm:  $|x|= q^{-s}$ if $x_s\neq 0$. With this norm $K$ is a space of
+homogeneous type in the sense of Coifman and Weiss. We can define
+$H^p$ spaces via atomic decomposition.
+
+\section{Multiplier on Hardy spaces over $K$}
+ 
+A multiplier theorem of Marcinkiewicz type.
+
+\begin{theorem} Suppose $\phi$ is radial.  $\{\phi\}\in BV(\mathbb{Z})$,
+i.e.,
+\begin{equation}
+\sum_{-\infty}^\infty \vert \phi^k-\phi^{k+1}\vert <\infty. 
+\end{equation} 
+Then ${\phi}^\vee \in L^1(K) +\phi(0) \de $. Moreover, 
+$\Phi^*f (x)=\sup_k |\phi_k(D)f(x) |$   has type $(H^p, L^p)$, $0<p\le 1$.  
+\end{theorem}
+
+In [ZhZ], we prove a multiplier theorem for maximal operators on
+$L^p$.    
+
+\begin{theorem}
+Suppose $\Om\in L^\infty$ satisfies
+\begin{equation}
+(i)\quad \sup_{\substack{|z|=1\\k\in N\\ \nu \in Z} }\sum_{m=1}^k
+\int_{|x|=1}\vert \sum_{\ell=m+1}^{k+1}  [ ( \Om^{\ell,\nu}
+)^\vee(x+\ss^mz)-( \Om^{\ell,\nu}  )^\vee(x)   ]  \vert \ud x
+:=B<\infty,
+\end{equation}
+where $( \Om^{\ell,\nu} = ( \Om(\ss^\nu\cdot)\Phi^\ell  $; $B>0$ a
+constant. Then $\Om \in SMM(L^p)$, with regularization, $1<p<\infty$;
+and, $Lf= \lim_{k\rightarrow -\infty } L_kf  $ in $L^p$ and $a.e.$ in
+$x$ for $ f\in L^p$, $ 1<p< \infty $.
+
+Furthermore, if the stronger condition
+\begin{equation}
+(ii)\quad \sup_{\substack{|z|=1\\ \nu \in Z}} \sum_{\ell=2}^\infty \sum_{m=1}^{\ell-1}
+\int_{|x|=1}\vert [ ( \Om^{\ell,\nu}
+)^\vee(x+\ss^m z)-( \Om^{\ell,\nu}  )^\vee(x)] \vert \ud x
+:=B'<\infty,
+\end{equation}
+is satisfied, then $ \Om \in SMM(L^p)\cap WMM(L^1)$ with
+regularization, $1<p<\infty$ and
+ $Lf= \lim_{k\rightarrow -\infty } L_kf$ exists  $a.e.$ in
+$x$ for $ f\in L^p$, $ 1\le p< \infty $. 
+\end{theorem}
+
+Remark. (ii) implies (i).
+
+
+When $\Om$ is homogeneous of degree zero, i.e., $\Om(\ss^k x )=\Om(x)$
+for all $k\in Z$. Then Theorem 1 can be restated in a simpler form.
+
+\begin{theorem} (Theorem 2)
+Suppose $\Om\in L^\infty$ is homogeneous of degree zero.
+
+(i)\quad If
+$$
+ \sup_{|z|=1} \sum_{m=1}^k
+\int_{|x|=1}\vert \sum_{\ell=m+1}^{k+1} [(\Om^{\ell}
+)^\vee(x+\ss^mz)-( \Om^{\ell} )^\vee(x)] \vert \ud x
+:=B<\infty,
+$$
+then the first conclusion of Theorem 1 holds.
+
+(ii) If 
+$$
+\quad \sup_{\substack{|z|=1}} \sum_{\ell=2}^\infty \sum_{m=1}^{\ell-1}
+\int_{|x|=1}\vert [ ( \Om^{\ell}
+)^\vee(x+\ss^m z)-( \Om^{\ell} )^\vee(x)] \vert \ud x
+:=B'<\infty,
+$$
+then the second conclusion of Theorem 1 holds.
+\end{theorem}
+
+
+We also have a result on radial multiplers associated with dilation
+\begin{theorem}
+Suppose that $\Om$ satisfy all the conditions in Theorem 2 and $m$ is
+radial and
+satisfies  $\sum_{k=-\infty}^\infty |m^k-m^{k+1} | <\infty $,
+Let 
+$$
+T_kf(x)=[ (m\Om)(\ss^{-k}\cdot ) \hat{f}]^\vee(x)
+$$
+be defined initially for $f\in {\cal S}$, and let 
+$$
+T^*f(x)= \sup_{k\in Z} \vert T_kf(x)\vert.
+$$
+
+Then 
+
+$
+(i) \lim_{k\rightarrow -\infty} T_kf(x)=m(0) (\Om  \hat{f})^\vee(x)
+\quad in \quad L^p, 1<p<\infty;
+$
+
+$ \lim_{k\rightarrow -\infty} T_kf(x)=m(0) (\Om  \hat{f})^\vee(x)$
+\quad a.e. in $x$, $1\le p<\infty$, where $m(0)=  \lim_{k\rightarrow
+-\infty} m^k; 
+$
+
+$ T^*f$ has type $(p, p)$, $1<p<\infty$ and weak type $(1,1)$; in brief,
+$m\Om$ belongs to $SMM(L^p)\cap WMM(L^1)$,  $1<p<\infty$ with dialation.
+\end{theorem}
+
+\vspace{.421in}
+
+\section{Some References}
+
+Daly, James E.(1-CO2) 
+A necessary condition for Calderón-Zygmund singular integral operators. (English. English summary) 
+J. Fourier Anal. Appl. 5 (1999), no. 4, 303--308.
+
+Let $\Omega(x) $ be an integrable function defined on the sphere $S^{n-1}$ with mean value zero and let $T_\Omega$ be the Calderón-Zygmund singular integral
+operator with kernel the principal value distribution $\text{p.v.}\,\Omega (x/|x|) /|x|^n$. The following result is proved: If $T_\Omega$ maps the Hardy space $H^1(\bold
+R^n)$ into itself, then the function $\Omega$ is an element of the Hardy space $H^1(S^{n-1})$. Corollaries are obtained regarding summability properties of the $L^2$
+norms of the elements of the spherical harmonic decomposition of the corresponding multipliers. The proof of the main result uses the spherical harmonic expansion of
+the corresponding multiplier on $S^{n-1}$, a version of the F. and M. Riesz theorem on the sphere, and Colzani's characterization of the Hardy space $H^1$ on the
+sphere using the Riesz transforms.
+
+                                    Reviewed by Loukas Grafakos 
+---------------------------------------------------------------
+
+Daly, James E. 
+The invalidity of the Calderón-Zygmund inequality for singular integrals over local fields. 
+Bull. Amer. Math. Soc. 81 (1975), no. 5, 896--899.
+
+The author continues his study in analysis over local fields [see Math. Ann. 215 (1975), 59--68; ibid. 218 (1975), 117--126]. Let $K$ be a local field
+(non-discrete, zero-dimensional, locally compact field), $B^n=\{x\in K\colon|x|\leq q^{-n}\}$, $D^n=\{x\in K\colon|x|=q^{-n}\}$, $\lambda$ a Haar measure on $K$ such
+that $\lambda(B^0)=1$, and $\pi$ a prime satisfying the condition $\pi B^0=B^1$. For each integer $k\geq 2$, let $\Gamma_k$ denote the set of $\omega\colon
+K^*\rightarrow C$ such that (i) $\omega(x+B^k)=\omega(x)$ for each $x\in D^0$, (ii) $\omega(\pi^jx)=\omega(x)$ for any $x\in K^*$ and $j\in Z$, and (iii)
+$\int_{D^0}\omega(x)\,d\lambda(x)=0$. Set $\Gamma=\bigcup_{k=2}^\infty\Gamma_k$. For each $\omega\in\Gamma$, we define the singular integral operator
+$T_\omega$ with kernel $\omega$ by setting $T_\omega(f)(y)=\text{p.v.}\int_K\omega(x)|x|^{-1}f(y-x)\,d\lambda(x)$; then $T_\omega$ defines a bounded linear operator
+in each $L^p$, $1\leq p<\infty$. We also set $$ \|\omega\|_r=\{\int_{D^0}|\omega(x)|^r\,d\lambda(x)\}^{1/r}. $$ The author proves the following theorem. For $1<p<\infty$,
+$1\leq r<\infty$ ($1\leq r\leq\infty$, if $q$ is odd), there is no constant $C(p,r)$ such that for all $\omega\in\Gamma$, $\|T_\omega\|_p\leq C(p,r)\|\omega\|_r$. This means
+that the Calderón-Zygmund inequality for singular integrals over $ R^n$ [cf. N. Dunford and J. Schwartz, Linear operators, Part II: Spectral theory, self adjoint operators in Hilbert
+space, especially p. 1072, Interscience, New York, 1963; Russian translation, Izdat. "Mir", Moscow, 1966] is no longer valid in the case
+of local field analysis.
+
+                                     Reviewed by M. Hasumi 
+
+-----------------------------------------------------------
+
+Daly, James E.(1-CO2) 
+Factorization of Hardy spaces on local fields. 
+Math. Ann. 282 (1988), no. 2, 243--250.
+
+Coifman, Rochberg and Weiss extended to $\mathscr{ H}'$ of several
+variables 
+the factorization theorems on the unit disk involving conjugate functions. Uchiyama
+generalized the work to $\mathscr{ H}^p$ on spaces of homogeneous type for a restricted range of $p$. The author extends these results to $\mathscr{ H}^p$ on a local field for all
+$p$. A local field $\mathfrak{ k}$ is a field with nontrivial
+valuation which is locally compact. When not
+ equal to the real or complex numbers, $\mathfrak{ k}$ is a complete
+non-Archimedean valued field $(|a+b|\le \max |a|, |b|$ for all
+$a,b\in\mathfrak{ k})$ with 
+finite residue class field and discrete valuation $(|\mathfrak{ k}|=\{q^n\colon n\in \bold Z\}
+\cup\{0\})$. The author proves a number of interesting results pertaining to singular integrals $T_w$ with a kernel $w$ that is homogeneous and locally constant. Among
+them is the following theorem: If $g\in \mathscr{ H}^q$, $h\in \scr{ H}^r$ with $1/p=1/q+1/r$, $r,p,q>0$ then there is a constant $C(q,r)$ such that $||hT_w g-g T'_wh||_{\mathscr
+{H}^p}\le C(q,r)||g||_{\scr{ H}^q} ||h||_{\mathscr{ H}^r}$. The
+singular integrals $T_w$ and $T'_w$ are defined 
+by $$ T_wf(y)=\textrm{pv}\int(w(y-x)/|y-x|)f(x)dx,$$ 
+$$
+T'_wf(y)=\textrm{pv}\int(w(x-y)/|x-y|) f(x)dx.$$ They were studied
+ extensively by the author and 
+ K. Phillips \ref[same journal 265 (1983), no. 2, 181--219] and 
+ M. Taibleson \ref[ Fourier analysis on local fields, Princeton Univ. Press, Princeton, NJ, 1975].
+
+                                    Reviewed by E. Beckenstein 
+-------------------------------------------------------------------
+
+Daly, James E.(1-CO2); Phillips, Keith(1-NMS) 
+On the classification of homogeneous multipliers bounded on $H\sp 1( R\sp 2)$. 
+Proc. Amer. Math. Soc. 106 (1989), no. 3, 685--696.
+
+Suppose that $m$ is a bounded measurable function on $\bold R^2$, homogeneous of degree $0$, and that the corresponding multiplier operator $T_m$ is bounded on
+$H^1(\bold R^2)$. The authors show that if $m$ is regarded as a function on the circle $\bold T$, then the convolutions $S*m$,\break $S*(\sin (\cdot)m)$, and $S*(\cos(\cdot)m)$
+are of bounded variation on $\bold T$, where $S$ is determined by $\hat S(n)=2\pi(-i\,\textrm{sgn}(n))^{n+1}$, from which it follows in turn that $m$ has an absolutely
+convergent Fourier series. The proof makes use of detailed analysis involving special functions. 
+
+A simple example shows that $T_m$ may fail to be bounded on $H^1$ even though $m$ has an absolutely convergent Fourier series. The authors do show, however,
+using the method of rotations and Riesz transforms, that if the three convolutions above are of bounded variation on $\bold T$, then $T_m$ is bounded on $L^p(\bold
+R^2)$ for $1<p<\infty$.
+
+                                    Reviewed by Norman J. Weiss 
+-------------------------------------------------------------------
+
+Daly, James E. 
+Local field singular integrals with complex homogeneity. 
+Math. Ann. 218 (1975), no. 2, 117--126.
+
+The authors study singular integral operators in several variables over a local field $\scr K$ where the kernel has complex homogeneity. These operators are of the
+form $T_\omega{}^\gamma f(y)=(\text S)\int(\omega(x)/|x|^{\alpha+i\gamma})f(y-x)\,dx$, where $(\text S)\int$ denotes Abel summation, $\gamma\in R\smallsetminus\{2\pi
+n/\log q\}_{n=-\infty}^\infty$ and $\omega$ is homogeneous of degree zero and satisfies certain smoothness conditions. Their results are closely related to the zero
+homogeneity work of K. Philips and M. Taibleson [Pacific J. Math. 30 (1969), 209--231] and the fractional integration work of Taibleson [Math. Ann. 176
+(1968), 191--207].
+
+                                     Reviewed by U. B. Tewari 
+
+-------------------------------------------------------------
+
+
+
+
+Daly, James E. 
+On the necessity of the Hörmander condition for multipliers on $ H\sp{p}( R\sp{n})$. 
+Proc. Amer. Math. Soc. 88 (1983), no. 2, 321--325.
+
+From the text: "We prove that a class of multiplier operators on $ H\sp p( R\sp n)$, that send atoms to molecules boundedly, must satisfy a Hormander condition. This
+provides a partial converse to a theorem of Taibleson and Weiss."
+
+
+----------------------------------------------------------------------------------
+Daly, James E. 
+Singular integral multipliers on local fields. 
+Harmonic analysis in Euclidean spaces (Proc. Sympos. Pure Math., Williams Coll., Williamstown, Mass., 1978), Part 2, pp. 333--335, 
+Proc. Sympos. Pure Math., XXXV, Part, 
+Amer. Math. Soc., Providence, R.I., 1979. 
+
+Let $K$ be a local field with norm $|·|$. For a function $m$ on $K$, which is (integrally) homogeneous of degree zero (i.e., $f(\pi^kx)=f(x)$ for all $x\in K$, $k\in Z$ and
+some $\pi\in K$ with $|\pi|=q^{-1}$), let $m^0$ be the restriction of $m$ to $D^0=\{x\in K\colon|x|=1\}$. The author presents some results on the multiplier operator $T_m$
+associated with such a function $m$ in $L_\infty(K)$. Typical are the
+following two theorems. Theorem A: If
+ $\sum_{n=0}^\infty|(m^0)^{\small \vee}(n)|<\infty$ then there
+exists an $\omega\in L_1(D^0)$ such that $T_m$ equals the singular
+integral operator associated with $\omega$. 
+
+Theorem B: If $\sum_{n=2}^\infty(\log n)|(m^0)^{\small
+\vee}(n)|<\infty$ then $T_m$ maps $H_1(K)$ continuously into $H_1(K)$. 
+
+                                    Reviewed by C. W. Onneweer 
+--------------------------------------------------------------------
+
+Daly, James E.(1-CO2); Phillips, Keith L.(1-CO2) 
+Multipliers and square functions for $H\sp p$ spaces over Vilenkin groups. (English. English summary) 
+Analysis of divergence (Orono, ME, 1997), 171--186, 
+Appl. Numer. Harmon. Anal., 
+Birkhäuser Boston, Boston, MA, 1999. 
+
+Summary: "This work is a short history of the Hardy spaces $H^p$ for Vilenkin groups, beginning with the square function characterizations of the Lebesgue spaces
+$L^p$ by Sunouchi in the dyadic case in 1951. For the dyadic group $G$ it is proved that the function with values $\phi(k)=k2^{-j}$ on the $j$th dyadic block of $G$ is
+an $H^p$-multiplier with respect to the Walsh functions $\{\omega_k\colon 0\leq k\leq\infty\}$. This theorem implies that Sunouchi's square function $S_2$
+characterizes $H^p$, solving a conjecture of Simon for $H^1$ made in 1985. The inverse of $\phi$ is also an $H^p$-multiplier." 
+
+------------------------------------
+
+Daly, James; Phillips, Keith(1-NMS) 
+On singular integrals, multipliers, $\mathfrak{ H}\sp{1}$ and Fourier series---a local field phenomenon. 
+Math. Ann. 265 (1983), no. 2, 181--219.
+
+This article extends earlier works of M. H. Taibleson [especially Fourier analysis on local fields, Princeton Univ. Press, Princeton, N.J., 1975] and the
+authors [especially Phillips, Math. Ann. 242 (1979), no. 1, 69--84; MR 81e:43018]. Harmonic analysis on a local field $K$ other than $ R$ or $ C$ allows one to use in
+this context the notions of singular integral, Hardy spaces and their Coifman-Weiss molecular characterizations [see Taibleson, Harmonic analysis in Euclidean
+spaces (Williamstown, Mass., 1978), Part 2, 311--316, Proc. Sympos. Pure Math., XXXV, Part 2, Amer. Math. Soc., Providence, R.I., 1979; MR 81i:43015]. Let $P\sb
+0$ be the ring of integers and $D$ the group of units of $K$. The distributions on $K$ [resp. $P\sb 0$, $D$] are the linear functionals on the class of locally constant test
+functions with compact support. Let $w$ be a distribution on $D$ with total mass 0. Convolution with respect to the kernel $(1/\vert x\vert )w(x/\vert x\vert )$ defines an
+operator $T$ on the test functions on $K$. Applying the Fourier
+transform on $K$, one then has
+ $\hat{(T\varphi)} =m·\hat\varphi$, where $m$ is a distribution on
+$D$. A distribution $u$ on $D$ can also be considered to be a distribution on $P\sb 0$ with support contained in $D$. The connection between the Fourier transforms
+$u\sp \Delta$ on $D$ and $u\sp {\dag}$ on $P\sb 0$ involve the gamma function on $K$, for which numerous formulas are established. From the relations between
+$w\sp \Delta$, $w\sp {\dag}$, $m\sp \Delta$, $m\sp {\dag}$, the authors establish links between the membership of these functions in the spaces $c\sb 0$, $l\sp p$,
+$1\leq p<+ \infty$, and the membership of $w$ or $m$ in $L\sp p(D)$. For example, $m\sp {\dag}\in l\sp 1$ implies $w\in L\sp 1(D)$. Contrary to the situation in $ R\sp
+n$, an example is given in which $w\in L\sp 2(D)$ and $m\notin L\sp
+\infty(D)$ (a result established earlier by J. A. Chao [Studia
+Math. 49 (1973/74), 268--287). 
+Let ${\cal B}(L\sp p)$, ${\cal B}(H\sp p)$, and ${\cal B}(H\sp p,L\sp
+p)$ be the spaces of bounded operators in 
+$L\sp p(K)$, in $H\sp p(K)$, and from $H\sp
+p(K)$ into $L\sp p(K)$, respectively. The membership of $T\sb m$ in one of these operator spaces depends on suitable properties of $w$ or $m$. For example, if $T\sb
+m\in{\cal B}(H\sp p,L\sp p)$ for $0<p\leq 1$, then $m\sp {\dag}\in l\sp p$. Conversely, if $m\sp {\dag}$ satisfies the stronger property $\sum\sb {n\geq 1}\vert m\sp
+{\dag}(\chi\sp {(n)})\vert \sp p\log n<+\infty$ for a suitable indexing of the character group of $P\sb 0$, then $T\sb m\in{\cal B}(H\sp p,L\sp p)$. Other conditions involve
+the continuity of $w$: Let $w\in L\sp 1(D)$, $\tilde w(x)=(1/\vert x\vert )w(x/\vert x\vert )$ and $$\eta(w)=\int\sb {\vert y\vert \leq 1}\int\sb {\vert x\vert >1}\vert \tilde
+w(x-y)-\tilde w(x)\vert \,dx\,dy.$$ If $\eta(w)>+\infty$, then $m\in L\sp \infty(D)$, $m\sp {\dag}\in l\sp 1$, $T\sb m\in{\cal B}(L\sp P)$ for $1<p<+\infty$, and $T\sb
+m\in{\cal B}(H\sp 1,L\sp 1)$. Various conditions implying $\eta(w)<+\infty$ are given, for example, $\sum\sb {n\geq 1}\vert m\sp {\dag}(\chi\sp {(n)})\vert \log n<+\infty$.
+The last section is dedicated to examples of Banach algebras ${\cal M}({\cal F})=\{cI+T\sb m\}$, $c\in C$, of operators in which $m$ belongs to a suitable family ${\cal
+F}$ of distributions on $D$. One such family ${\cal F}$ is the set of all $m$ such that $m\sp \Delta\in l\sp 1$ and $m\sp \Delta(1)=0$; the norm in ${\cal M}({\cal F})$ is
+$\vert c\vert +\Vert m\sp \Delta\Vert \sb 1$. This article constitutes a work of synthesis covering almost all aspects of harmonic analysis on local fields. Many explicit
+calculations are presented.
+
+                                   Reviewed by Michel Gatesoupe 
+----------------------------------------------------------------
+
+Onneweer, C. W.(1-NM-MS) 
+H\"ormander-type multipliers on locally compact Vilenkin groups: the $L\sp 1(G)$-case. (English. English, Russian summary) 
+Anal. Math. 24 (1998), no. 3, 213--220.
+
+Let $G$ be a locally compact Vilenkin group. The author establishes a multiplier theorem for the space $L\sp 1(G)$ and discusses its sharpness. As a corollary, he
+obtains a H\"ormander-type multiplier theorem for $L\sp 1(G)$.
+
+                                    Reviewed by Da Chun Yang 
+
+-------------------------------------------------------------
+
+Kitada, Toshiyuki(J-HIROSG); Onneweer, C. W.(1-NM-S) 
+Hörmander-type multiplier theorems on locally compact Vilenkin groups. (English. English summary) 
+Theory and applications of Gibbs derivatives (Kupari-Dubrovnik, 1989), 115--125, 
+Mat. Inst., Belgrade, 199?. 
+
+The authors present a discussion of dyadic differentiation on locally compact Vilenkin groups and related H\"ormander-type conditions for multipliers on weighted
+Lebesgue and Hardy spaces. Proofs for these results can be found in papers by Kitada \ref[Monatsh. Math. 110 (1990), no. 3-4, 283--295; MR 91k:43010] and
+Onneweer and T. S. Quek \ref[Proc. Amer. Math. Soc. 105 (1989), no. 3, 622--631; MR 89g:43004; J. Austral. Math. Soc. Ser. A 48 (1990), no. 3, 472--496; MR
+91j:43007]. The results are analogous to the real case results by Kurtz, Wheeden, Muckenhoupt, and Young. 
+
+{For the entire collection see MR 93k:42001.}
+
+                                    Reviewed by James E. Daly 
+
+-------------------------------------------------
+
+Onneweer, C. W.(1-NM); Quek, T. S.(SGP-SING) 
+Multipliers for Hardy spaces on locally compact Vilenkin groups. (English. English summary) 
+J. Austral. Math. Soc. Ser. A 55 (1993), no. 3, 287--301.
+
+Let $G$ be a locally compact Vilenkin group with dual group $\Gamma$, and, for each $0<p\leq 1$, let $H^p$ denote the correspondinng dyadic Hardy space on $G$
+(i.e., the space of functions $f$ on $G$ whose dyadic maximal function $f^*$ belongs to $L^p(G)$). An $L^\infty (\Gamma)$ function $\phi$ is called a multiplier of $H^p$
+if there is a constant $C>0$ such that the Vilenkin-Fourier transform
+of $f$ satisfies 
+$\| {(\phi \hat{ f})}^\vee \|_{H^p} \leq C\|f\|_{H^p}$ for all $f\in H^p$. 
+
+The authors obtain several conditions on a given $\phi \in L^\infty (\Gamma)$, using Herz norms, sufficient to conclude that $\phi$ is a multiplier of $H^p$, and discuss
+the sharpness of some of these conditions. They also include an illuminating discussion of how these results relate to earlier theorems of Seeger, of Cowling, and of
+Fendler and Fournier. The proofs use the atomic characterization of $H^p$.
+
+                                     Reviewed by W. R. Wade 
+
+------------------------------------------------------------
+
+Onneweer, C. W.(1-NM-S) 
+Multipliers for $H\sp p(G)$-spaces. (English. English summary) 
+X Latin American School of Mathematics (Spanish) (Tanti, 1991). 
+Rev. Un. Mat. Argentina 37 (1991), no. 1-2, 135--141 (1992).
+
+Summary: "In this paper we present some multiplier theorems for Hardy spaces defined on a locally compact Vilenkin group. We discuss how these theorems compare
+with some known multiplier theorems for Lebesgue and Hardy spaces defined on $\bold R^n$, and we conclude with a brief description of a few open questions." 
+
+-----------------------------------------------------------------
+
+Onneweer, C. W.(1-NM); Quek, T. S.(SGP-SING) 
+On $H\sp p(\bold R\sp n)$-multipliers of mixed-norm type. (English. English summary) 
+Proc. Amer. Math. Soc. 121 (1994), no. 2, 543--552.
+
+Let $0<p\leq 2$, and $1/s=1/p-1/2$. Let $\eta$ be a suitable bump function associated to the unit annulus in $ R^n$. The following theorem is proved: If $0<p\leq 1$,
+$m\in L^\infty( R^n)$ and $\sum_{j\in Z}\|[m(2^j\cdot)\eta(\cdot)]^\vee\|^s_p<\infty$, then $m$ is a Fourier multiplier of $H^p( R^n)$. The authors also show, by example, that
+replacing $s$ by a larger number in the statement of the theorem is not sufficient to yield the conclusion. These results are direct analogues of those previously
+obtained by the authors for locally compact Vilenkin groups. They also nicely complement a result of M. G. Cowling, G. Fendler and J. J. F. Fournier \ref[Math. Ann.
+285 (1989), no. 2, 333--342; MR 90m:42016], which says that if $1<p\leq 2$ and $\sum_{j\in Z}\|m(2^j\cdot)\eta(\cdot)\|^s_{m_p}<\infty$, then $m$ belongs to the space $m_p$
+of $L^p( R^n)$ Fourier multipliers.
+
+                                    Reviewed by Anthony Carbery 
+
+---------------------------------------------------------------
+
+Onneweer, C. W.(1-NM-S); Quek, T. S.(SGP-SING) 
+$H\sp p$ multiplier results on locally compact Vilenkin groups. 
+Quart. J. Math. Oxford Ser. (2) 40 (1989), no. 159, 313--323.
+
+ A. Baernstein and E. T. Sawyer
+ \ref[Mem. Amer. Math. Soc. 53 (1985), no. 318; MR 86g:42036] proved strong multiplier theorems that provide sufficient
+conditions for a multiplier operator to be bounded on the Hardy spaces
+ $H^p(\mathbb{ R}^n)$ for $0<p\leq 1$. 
+They showed also that, in a certain sense, their
+results are the best possible. 
+
+ T. Kitada provided analogues of the sufficiency results of
+Baernstein and Sawyer 
+for Hardy spaces defined over certain locally
+compact Vilenkin groups. In the paper under review, the authors provide a modification of Kitada's result for $H^1$ and show that their result for $H^1$ and Kitada's for
+$H^p$, $0<p<1$, are the best possible. The smoothness conditions on the multipliers are expressed in terms of their containment in certain Herz spaces.
+
+                                    Reviewed by James E. Daly 
+
+
+---------------------------------------------------------------
+
+
+\vspace{0.3in}
+
+\begin{thebibliography}{99}
+
+\bibitem{D}
+ Daly, James E. A necessary condition for Calder\'on-Zygmund singular
+integral operators, {\em  J. Fourier Anal. Appl}. {\bf 5} (1999), no. 4, 303--308. 
+
+\bibitem{DK}
+Daly, James E.; Kurtz, Douglas S. BMO and singular integrals over
+local fields, {\em J. Austral. Math. Soc. Ser. A} {\bf 54} (1993), no. 3,
+321--333. 
+
+\bibitem{DP}
+ Daly, James E.; Phillips, Keith L. Multipliers and square functions for $H\sp p$ spaces over Vilenkin groups. Analysis of divergence (Orono, ME, 1997),
+  171--186, Appl. Numer. Harmon. Anal., Birkhäuser Boston, Boston, MA, 1999. 
+ 
+\bibitem{DP2}
+ Daly, James E.; Phillips, Keith L. A note on $H\sp 1$ multipliers for locally compact Vilenkin groups. Canad. Math. Bull. 41 (1998), no. 4, 392--397.
+
+\bibitem{DP3}
+Daly, J. E.; Phillips, K. L. Walsh multipliers and square functions for the Hardy space $H\sp 1$. Acta Math. Hungar. 79 (1998), no. 4, 311--327.
+
+\bibitem{DP4}
+Daly, James; Phillips, Keith On singular integrals, multipliers, $\mathfrak{ H}\sp{1}$ and Fourier series---a local field phenomenon. Math. Ann. 265
+  (1983), no. 2, 181--219. 
+ 
+\bibitem{O}
+Onneweer, C. W. H\"ormander-type multipliers on locally compact Vilenkin groups: the $L\sp 1(G)$-case. Anal. Math. 24 (1998), no. 3, 213--220.
+
+
+\bibitem{OK}
+Kitada, Toshiyuki; Onneweer, C. W. H\"ormander-type multiplier theorems on locally compact Vilenkin groups. Theory and applications of Gibbs derivatives
+  (Kupari-Dubrovnik, 1989), 115--125, Mat. Inst., Belgrade, 199?. 
+                                
+\bibitem{OQ}
+Onneweer, C. W.; Quek, T. S. Multipliers for Hardy spaces on locally
+compact Vilenkin groups,
+{\em J. Austral. Math. Soc. Ser.A}, {\bf 55} (1993), no. 3, 287--301.
+
+\bibitem{OQ2} 
+Onneweer, C. W.; Quek, T. S. $H\sp p$ multiplier results on locally
+compact Vilenkin groups, {\em Quart. J. Math.}, Oxford Ser. (2) {\bf 40} (1989), no. 159,
+  313--323. 
+
+\bibitem{T}
+Taibleson, M.H., {\em Fourier Analysis on Local Fields}, Princetion
+University Press, 1975.
+
+\bibitem{Zhen}
+ Riesz type kernels over the ring of integers of a local field, {\em
+J. Math. Anal. Appl.}, {\bf 208} (1997), no. 2, 528--552. 
+
+\bibitem{Zhen2}
+S.Zheng, Ces\`aro summability of Hardy spaces on the ring of integers in
+a local field,
+{\em J. Math. Anal. Appl.}, {\bf 249} (2000), no. 2, 626--651. 
+
+\bibitem{Zh-Zh}
+S.Zheng,  and W.Zheng, Almost everywhere convergence of sequences of
+multiplier operators on local fields, {\em Sci. China Ser. A} {\bf 40} (1997), no. 1,
+  10--23.                                
+
+
+\end{thebibliography}
+
+\end{document} 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

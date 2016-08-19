@@ -1,0 +1,1007 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+\usepackage[mathscr]{eucal}
+\usepackage{eucal} %(with mathscr option; Euler script alphabet)
+\usepackage{eufrak} % in the preambel providing the \mathfrak command
+		    % for typesetting both upper and lowercase in
+		    %Euler Fraktur
+%\usepackage{eurosans}
+%\usepackage[german]{babel}
+%\usepackage[T1]{fontenc}
+%\usepackage{amstex}
+
+\def\spt{\sptilde}
+\def\sph{\sphat}
+%\def\eps{\varepsilon}
+\def\vphi{\varphi}
+\def\lam{\lambda}
+\def\mf{\mathfrak}
+%\def\Om{\Omega}
+%\def\de{\delta}
+\def\sh{\sinh}
+\def\ch{\cosh}
+\def\th{\tanh}
+%\def\F{{\cal F}}
+%\newcommand{\ud}{\mathrm{d}}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{proposition}{Propostion}
+
+\newtheorem{remarks}[subsection]{Remarks}
+\newtheorem{definition}[subsection]{Definition}
+
+%\include{psfig}
+
+\title{Weak type estimates of nonconvolution operators on certain Riemannian symmetric spaces 
+}
+
+\author{Shijun Zheng \thanks{Suppoted in part by NSF}\\
+        {\normalsize {\sl Department of Mathematics }} \\
+        {\normalsize {\sl University of Maryland }}\\
+        {\normalsize {\sl College Park, MD 20742}}\\
+       {szheng@math.umd.edu}\\
+{http://www.math.umd.edu/\sptilde szheng}\\
+ %{\normalsize {USA}}\\
+}
+%\email{szheng@math.umd.edu}
+
+%\urladdr{http://www.math.umd.edu/\sptilde szheng}
+%\thanks{thanks}
+%}
+%End one author
+
+%and\\      
+%\author{Jianming Liu\\
+%    {\normalsize {\sl Department of Mathematics }} \\
+%        {\normalsize {\sl Beijing University}}\\
+%        {\normalsize {\sl Beijing, }}\\
+%        {\normalsize {\sl China, P.R.}}\\   
+%        }
+%\date{}
+
+\begin{document}
+\maketitle
+%\tableofcontents
+
+Keywords: Semisimple Lie groups, symmetric spaces, Bochner-Riesz
+means, Jacobi transforms, Hardy spaces
+
+MSC2000: {Primary:43A15, 43A85;  Secondary:22E30}
+
+%\tableofcontents
+
+\vspace{0.4in}
+\begin{abstract}
+Consider the Jacobi function $\phi_\lambda(t)$ of order $(\alpha,\beta)$ $(\alpha\neq-1,-2,\cdots)$; the Jacobi transform is defined by $${\widehat
+f(\lambda)=\int_0^\infty f(t)\phi_\lambda(t) \Delta(t)dt},$$ where $\Delta(t)=(2\sinh t)^{2\alpha+1} (2\cosh t)^{2\beta+1}$. There is a convolution product
+associated to the Jacobi transform which has the property that
+$\widehat{f*g}(\lambda)=\widehat f (\lambda) \,\widehat g(
+\lambda)$. % Set $\chi_r=(1/|[0,r]|)\chi_{[-r,r]}$, where for any set
+	   % $A, |A|=\int_A \Delta(t)dt$. With this, a
+	   % Hardy-Littlewood maximal operator can be defined as $Mf(t)=\sup_{r>0}\chi_r*|f|(t)$. 
+
+Let $G$ be a noncompact semisimple Lie group. The Riesz means on the
+homogeneous spaces $G/H$ can be defined via a weighted Jacobi transform. Based on an explicit formula 
+for the kernel of the Riesz means, we obtain a weak type
+estimate for the corresponding maximal operator.  
+We also study the boundedness result for the Hardy spaces on $G/H$ by an
+atomic decomposition adapted to $G$.
+
+%The weak-type $(1,1)$ estimate $$|\{Mf>\lambda\}|\leq(C/\lambda)\int_0^\infty |f(t)|\Delta(t)dt$$ is shown using a covering lemma adapted to the measure $||$
+%and by making estimates on the kernel $\chi_r$ and its translations. That $M$ is bounded on $L^\infty$ is straightforward; the $L^p$ estimates follow by
+%interpolation.
+
+\end{abstract}
+
+\section{Introduction}
+
+For $\alpha,\beta, \lam\in \mathbb{C}$, $\alpha\neq -11-2-3,\dots$,
+define
+$$ 
+{\cal L}_{\alpha,\beta}= \frac{d}{dx^2}+ \frac{\Delta'}{\Delta}
+\frac{d}{dx}, \quad x>0,$$
+where $ {\Delta}(x)={\Delta}_{\alpha,\beta} =(2\sh x)^{2\alpha+1}(2\ch
+x)^{2\beta+1}, x>0$. The Jacobi function $\phi_\lam $ is the unique
+even $C^\infty-$ functions on $\mathbb{R}$ such that  $\phi_\lam (0)=1$
+and satisfies 
+$${\cal L}_{\alpha,\beta}\phi_\lam= -(\rho^2+\lam^2)\phi_\lam,$$ 
+with $\rho =\alpha+\beta +1$.  For ``nice'' function $f$ define 
+the Jacobi transform $\hat{f}$ by
+$$ 
+\hat{f}= \frac{1}{2\pi}\int_0^\infty f(t) \phi_\lam (t){\Delta}(t)dt.$$
+
+Let $\alpha\ge \beta \ge -1/2$ and  $\alpha \neq -1/2$. If $f$ is an
+even function on $\mathbb{R} $ and $s\in [0,\infty)$ the translation
+$T_s$ is given by 
+$$
+ T_sf(t) = \int_0^\infty f(y)K(s,t,y){\Delta}(y)dy,
+$$
+where for $|s-t|<y<s+t $,
+
+\begin{align}
+K(s,t,y) = \frac{2^{1-2\rho}\Gamma(\alpha +1 ){(\ch s\ch t\ch y)}^{\alpha-\beta-1}}
+{\sqrt{\pi}\Gamma(\alpha +1/2) ( \sh s\sh t\sh y)^{2\alpha}} \cdot\\
+(1-B^2)^{\alpha-1/2}\cdot F(\alpha+\beta,\alpha-\beta; \alpha
++\frac{1}{2}, \frac{1}{2}(1-B) ),
+\end{align}
+
+and otherwise $K(s,t,y)=0$, where 
+$$ B= \frac{(\ch^2 s+\ch^2 t+\ch^2 y-1}{(\ch s\ch t\ch y)}.$$
+
+Note that $K$ is nonnegative, satisfying
+$$
+\int_0^\infty K(s,t,y )\Delta dy=1.
+$$
+
+There is a convolution given by 
+$$
+f* g(t)=  \int_0^\infty T_tf(s)g(t)\Delta(s)ds.$$
+
+\begin{lemma} Define $B(x,r)$ by $B(x,r)= [x-r,x+r]$ if $x-r>0$;
+$[0,x+r]:=B(x+r)$ if $t-r\neq 0$. Then 
+
+1) If $0\neg r<\infty, 1+|B(r)| \sim (\ch r)^{2\rho}$.
+
+2) $$ |B(r)| \sim r^{2(\alpha +1)}\quad r\le C$$
+
+$$ |B(r)|\sim (\ch r)^{2\rho}\quad r\ge C.$$
+
+3) For $r\le 1$, $x>2$,  $|B(x,r)| \sim r(\ch x)^{2\rho} \sim r
+   e^{2\rho x} $. 
+
+4) For $r\le 1$, $x<2$,
+ $$ |B(x,r)| \sim r x^{2(\alpha +1)}\quad x\ge 2r$$
+
+$$ |B(x,r)|\sim |B(r) |, \quad x< 2r.$$
+\end{lemma}
+
+
+\begin{lemma}
+Let $E$ be a subset of $\mathbb{R}^+$.  $\{ B(x_k,r_k ) \}$ is a
+covering of $E$ with $r_k\le 1$  for all $k$. Then there exists a
+disjoint  $\{ B(x_i,r_i ) \}$ such that 
+$$
+|E| \le C \sum_{i=1}^\infty | B(x_i,r_i) |. 
+$$
+\end{lemma}
+
+Proof similar to that of the Vitali covering lemma.
+
+
+\section{Riesz means of Jacobi expansions}
+(Try to write the following in terms of spectral theory)
+
+For $z\in \mathbb{C}, \Re z \ge 0 $, we define the Bochner-Riesz means
+of order $z$
+by 
+$$
+S_R^zf(x) = \int_0^\infty (1-\frac{\lam^2+\rho^2}{R})^z_+ \hat{f}(\lam) \phi_\lam^{\alpha,\beta}
+(x)|c(\lam)|^{-2}d\lam.$$
+
+The Riesz means can be written as $S_R^zf = s_R^z * f$, here
+$s_R^z $ is a function whose Jacobi transform is
+$$ 
+\hat{s}_R^z (\lam ) = (1-\frac{\lam^2+\rho^2}{R})^z_+).$$
+
+Let ${\cal F}_c $ be the usual Fourier-cosine transform, ${\cal A}$
+the Abel transform, then $ s_R^z={\cal A}^{-1}{\cal F}_c^{-1}(\hat{s}_R^z (\lam )).  $
+Like in Koornwinder, Jacobi functions and analysis on noncompact
+semisimple Lie Groups, in R.Askey et al (eds.), Special functions,
+D.Reidel Publ. Com., Dordrecht. (1984?) and Giulini.S and Mauceri
+G. `Almost everywhere convergence of Riesz means on certain noncompact
+symmetric spaces', Ann. Mat.Pura. Appl.(4)159, (1991). We obtain
+
+\begin{proposition} 
+If $\alpha \ge \beta -1/2$,  $\alpha\neq -1/2$, then 
+$$
+\vert s_R^z (x)\le\vert c(z) R^{\alpha +1} ( 1+\sqrt{R} |x|)^{-Re
+z-\alpha -3/2} (\frac{x}{\sh x}^{\alpha +1/2)} (\frac{1}{\ch x}^{\beta +1/2}. 
+$$
+\end{proposition}
+
+Consider the maximal operator
+$$
+S_*^zf (x)= \sup_{R>0} \vert S_R^zf (x)\vert, \quad f\in
+L^p(\Delta(x)dx ), 1\le p\le 2.
+$$ 
+
+We will need the maximal function $Mf$:
+$$ Mf(x)= M_{\alpha, \beta}f(x)= \sup_{r>0}\chi_r*|f|(x).$$
+
+Note. For certain discrete $\alpha, \beta$, $Mf $ has
+group-theorectical interpretation as the maximal function on symmetric spaces.
+
+\begin{theorem} Let $\alpha\ge \beta\ge -1/2$ and $\alpha \neq -1/2$,
+the maximal operator $M$ has weak type $(1,1)$,
+$$ \vert \{ x: Mf(x)>\lam   \}\vert \le C\lam^{-1} \Vert
+f\Vert_{L^1(\Delta dx)}.$$
+\end{theorem}
+
+Define 
+\begin{align}
+ M_{\phi}f(x)= \sup_{t>0}\phi(t)\chi_{[-t,t]}*f(x)\\
+=\sup_{t>0}\phi(t)\int_0^t T_xf(y)\Delta(y)dy.
+\end{align}
+
+
+\vspace{0.2in}
+
+\section{Some background in analysis on symmetric spaces}
+
+Hardy spaces and maximal operators on real rank one semisimple Lie groups. I. (English. English summary) 
+Tohoku Math. J. (2) 52 (2000), no. 1, 1--18.
+
+G.B.Folland:
+
+The purpose of this paper is to introduce a version of the atomic Hardy space $H^1$ on a semisimple Lie group $G$ of real rank one so that certain maximal
+operators are bounded from $H^1$ to $L^1$. Specifically, let $G=K\exp {p}$ be the Cartan decomposition of $G$. Balls centered at the identity in $G$
+are defined in terms of the norm $\sigma(k\exp X)=\|X\|$, where $\| \cdot\|$ is the Euclidean norm on ${ p}$ coming from the Killing form, and balls centered at
+other points are left translates of these. For $1<p\le\infty$, a $(1,p,0)$-atom is a function $a$ supported in some ball $B$ of radius $r$ such that
+$\|a\|_p\le|B|^{(1/p)-1}$ and $\int_G a=0$ if $r\le 1$, or $\|a\|_p\le|B|^{-1}$ if $r>1$; the space $H^1_{p,0}$ is defined to be the set of $f\in L^1(G)$ such that
+$s=\sum\lambda_ia_i$, where $a_i$ is a $(1,p,0)$-atom and $\sum |\lambda_i|<\infty$. 
+
+Given a family $\{\phi_t\}_{t>0}$ of $L^1$ functions on $G$, define the maximal operator $M_\phi^\epsilon$ for $\epsilon\ge0$ by $$M_\phi^\epsilon f(g)
+=\sup_{t>0}(1+t)^{-\epsilon}|f*\phi_t(g)|.$$ The author proves that the operator $M_\phi^\epsilon$ is bounded from $H^1_{p,0}$ to $L^1(G,dg)$ and the
+operator $M_\phi^0$ is bounded from $H^1_{p,0}$ to $L^1(G,\,(1+\sigma(g))^{-\epsilon} dg)$ in the following cases: (1) $\epsilon>0$, and $\phi_t$ is a family
+of functions obtained from a single $K$-bi-invariant function $\phi\in C_c^\infty(G)$ by suitable dilations; (2) $\epsilon>1/2$, and $\phi_t$ is the kernel of the
+heat semigroup $e^{t\Delta}$ on $G/K$; (3) $\epsilon>0$, and $\phi_t$ is the kernel of the Poisson semigroup $e^{-t\sqrt{-\Delta}}$. In all cases the proofs
+depend on detailed pointwise estimates for $f*\phi_t$.
+
+-------------------------------------------------------
+
+Giulini, Saverio(I-GENOE); Sjögren, Peter 
+A note on maximal functions on a solvable Lie group. 
+Arch. Math. (Basel) 55 (1990), no. 2, 156--160.
+
+The paper is closely related to one by  G. Gaudry, Giulini and
+A. M. Mantero%\en 
+\ref[Tôhoku Math. J. (2) 42 (1990), no. 2, 195--203; see the preceding review]. Here maximal functions on the
+group "$ax+b$" of the form $$M^\psi f(x,y)=\sup_{\rho>0}|R^\psi_\rho(x,y)|^{-1}\int_{R^\psi_\rho(x,y)} |f(x',y')|\,dx'\,dy',$$ where $R^\psi_\rho(x,y)=\{(x',y')\in\bold R\:|x'-x|<\rho$,
+$|y'-y|<e^x\psi(\rho)\}$, are studied. The main theorem of the paper is that if $\psi(\rho)=\rho^\alpha$, then $M^\psi$ is not of weak type $(1,1)$. Also, if $\psi(\rho)=e^{\beta\rho}$, then $M^\psi$
+is of weak type $(1,1)$ if and only if $\beta>1$. The proof is very illuminating.
+
+                                    Reviewed by A. Hulanicki 
+
+--------------------------------------------------------------
+
+Giulini, Saverio; Mauceri, Giancarlo; Meda, Stefano $L\sp p$ multipliers on noncompact symmetric spaces. J. Reine Angew. Math. 482 (1997), 151--175. (Reviewer: Tomasz
+  Przebinda) 
+ 
+
+Recall that a Fourier multiplier on $L^p(\bold R^n)$, $1\leq p<\infty$, is the Fourier transform $\widehat u$ of a tempered distribution $u$ on $\bold R^n$ such that the convolution operator $f\to
+f*u$ is bounded on $L^p(\bold R^n)$. 
+
+For $p=2$, the Fourier multipliers are simply bounded functions on $\bold R^n$. The problem of characterization of Fourier multipliers for $p\ne 2$ has been investigated by many prominent classical
+harmonic analysts, and remains open. 
+
+Let $G$ be a noncompact connected semisimple Lie group with finite center. Let $K\subseteq G$ be a maximal compact subgroup and let $G=KAN$ be an Iwasawa decomposition of $G$. Recall
+that the space of $K$-bi-invariant absolutely integrable functions on $G$ is a commutative Banach algebra. The spectrum of this algebra is described in terms of (bounded) spherical functions on
+$G$: $$ \phi_{\lambda}(x)=\int_Ke^{i(\lambda -\rho)(H(xk))}\,dk \qquad
+(x\in G, \lambda\in 
+\mathfrak{ a}_{\bold C}^*), $$ where $\mathfrak{ a}_{\bold C}^*$ is the complexified dual of the Lie algebra $\mathfrak{ a}$
+of the group $A$, and $x\in K\,exp(H(x))\,N$. Thus the Gel'fand
+transform of a 
+$K$-bi-invariant absolutely integrable function $f$ on $G$ can be written as $$ \tilde f(\lambda) = \int_G
+f(x)\,\phi_{-\lambda}(x)\,dx \qquad (\lambda \in \mathfrak{ a}_{\bold
+C}^*) $$ 
+and is called the spherical Fourier transform of $f$. (Here we take only those $\lambda$ for which the $\phi_{-\lambda}$ is
+bounded.) If $\lambda\in \mathfrak{ a}^*$, then the above formula makes sense for any tempered distribution $f$ on $G$. (These distributions have been defined by Harish-Chandra.) 
+
+Let $X=G/K$. One identifies functions on $X$ with functions on $G$ invariant under right translations by $K$. In analogy to the classical situation one defines a spherical multiplier on $L^p(X)$,
+$1\leq p <\infty$, to be the spherical Fourier transform $\tilde u$ of a $K$-bi-invariant tempered distribution $u$ on $G$ such that the convolution operator $f\mapsto f*u$ is bounded on
+$L^p(X)$. 
+
+Let $\rho\in \mathfrak{ a}^*$ denote one half times the sum of roots
+of $\mathfrak{ a}$ 
+in $\mathfrak{ n}$, the Lie algebra of $N$. Let $W$ be the Weyl group
+of 
+$(\mathfrak{ g}, \mathfrak{ a})$. For $t>0$ let $W_t$ be the
+interior of the convex hull in $\mathfrak{ a}^*$ of the $W$ orbit of
+$t \rho$. Let 
+$T_t=\mathfrak{ a}^*+i W_t$. Harish-Chandra's work implies easily that, as in the classical situation, a spherical multiplier on
+$L^2(X)$ is a bounded function on $\mathfrak{ a}^*$. J.-L. Clerc and
+E. M. Stein 
+\ref[Proc. Nat. Acad. Sci. U.S.A. 71 (1974), 3911--3912] have shown that if $p\ne 2$ then a spherical
+multiplier on $L^p(X)$ extends to a bounded holomorphic function on the tube $T_{|2/p-1|}$. For $G$ complex they also gave a sufficient condition: if $m$ is a $W$-invariant holomorphic
+function on the tube $T_{|2/q-1|}$, $1<q<2$, whose derivatives up to order $\dim\,X/2 +1$ satisfy decay conditions of Mikhlin-Hörmander type, then $m$ is a spherical multiplier on $L^p(X)$ for
+$q\leq p\leq q'$, where $q'$ is the conjugate exponent to $q$. This last result is generalized in the paper under review. The main result is (roughly) as follows. 
+
+For a bounded holomorphic function $M$ on the tube $T_t$, and $\eta$ 
+in the closure of $W_t$, let $M_\eta(\lambda)=M(\lambda+i\eta) (\lambda \in \mathfrak{ a}^*)$ be the non-tangential limit of $M$.
+Let $c$ denote the Harish-Chandra $c$-function on $\mathfrak{ a}^*$. Theorem: Let $G$ be complex. Let $m$ be a $W$-invariant holomorphic function on the tube $T_1$. Then the following hold. (i)
+If $m$ is bounded in $T_1$ and the function ${\cal S}m$ defined by the rule $$ {\cal S}m(\lambda)=\sum_{s\in W} (\det\,s)\, (c^{-1}m)_{s\rho}(\lambda)\qquad (\lambda\in \mathfrak{ a}^*) $$ is a Fourier
+multiplier on $L^p(\mathfrak{ a})$ for some $1<p<\infty$, then $m$ is a spherical Fourier multiplier on $L^p(X)$, and the norm of $m$ can be dominated by the norm of ${\cal S}m$. (ii) Let
+$\omega(\lambda)=\break (\langle \lambda, \lambda\rangle +4\langle
+\rho, \rho\rangle)^{(n-l)/4}$, where $n=\dim\,X$ and
+$l=\dim\,\mathfrak{ a}$. If $\omega m$ is a Fourier multiplier on 
+$L^p(\mathfrak{ a})$
+uniformly in every proper subtube of $T_1$ for all $1<p<\infty$, then $m$ is a spherical Fourier multiplier on $L^p(X)$ for all $1<p<\infty$. 
+
+The authors prove an analogous theorem for $X$ of rank one ($\dim \mathfrak{ a} =1$) and for radial multipliers on free groups.
+
+                                   Reviewed by Tomasz Przebinda 
+
+                                       [References]
+
+   1.J.-Ph. Anker, Sharp estimates for some functions of the Laplacian on noncompact symmetric spaces, Duke Math. J. 65 (1992), 257--297. MR 93b:43007 
+   2.J.-Ph. Anker, $L^p$ Fourier multipliers on Riemannian symmetric spaces of the noncompact type, Ann. Math. 132 (1990), 597--628. MR 92e:43006 
+   3.J.-P. Anker and N. Lohoué, Multiplicateurs sur certains espaces symétriques, Amer. J. Math. 108 (1986), 1303--1354. MR 88c:43008 
+   4.A. Baernstein II and T. Sawyer, Embedding and multiplier theorems for $H^p( R^n)$, Mem. Amer. Math. Soc. 318 (1985), 1--82. MR 86g:42036 
+   5.J.L. Clerc, Transformation de Fourier sphérique des espaces de Schwartz, J. Funct. Anal. 37 (1980), 182--202. MR 81j:22016 
+   6.J.L. Clerc and E.M. Stein, $L^p$ multipliers for noncompact symmetric spaces, Proc. Nat. Acad. Sci U.S.A. 71 (1974), 3911--3912. 
+   7.M.G. Cowling, Harmonic analysis on semigroups, Ann. Math. 117 (1983), 267--283. MR 84h:43004 
+   8.M.G. Cowling, S. Giulini and S. Meda, $L^p - L^q$ estimates for functions of the Laplace-Beltrami operator on noncompact symmetric spaces. I, Duke Math. J. 72 (1993), 109--150. MR
+    95b:22031 
+   9.M.G. Cowling, S. Giulini and S. Meda, $L^p - L^q$ estimates for functions of the Laplace-Beltrami operator on noncompact symmetric spaces. III, preprint. 
+  10.P. Eymard, Algèbres $A_p$ et convoluteurs de $L^p$, Sem. Bourbaki 367, November 1969. 
+  11.A. Figà-Talamanca and M. Picardello, Harmonic Analysis on Free Groups, Lect. Notes Pure Appl. Math. 87, Marcel Dekker, 1983. MR 85j:43001 
+  12.R. Gangolli, On the Plancherel formula and the Paley-Wiener theorem for spherical functions on semisimple Lie groups, Ann. Math. 93 (1971), 150--165. MR 44 
+  13.P. Graczyk and J.-J. Loeb, Bochner and Schoenberg theorems on symmetric spaces in the complex case, Bull. Soc. Math. France 122 (1994), 571--590. MR 95m:43008 
+  14.S. Helgason, Groups and Geometric Analysis, Academic Press, New York 1984. MR 86c:22017 
+  15.C.S. Herz, Le rapport entre l'algèbre $A_p$ d'un groupe et d'un sous-groupe, C.R. Acad. Sc. Paris 271 (1970), 244--246. 
+  16.L. Hörmander, Estimates for translation invariant operators in $L^p$ spaces, Acta Math. 104 (1960), 93--140. 
+  17.L. Hörmander, The Analysis of Linear Partial Differential Operators, Vol. I, Springer Verlag, Berlin 1983. 
+  18.C. Meaney, Transferring estimates for zonal convolution operators, Anal. Math. 15 (1989), 175--193. MR 91g:43004 
+  19.R.J. Stanton and P.A. Tomas, Expansions for spherical functions on noncompact symmetric spaces, Acta Math. 140 (1978), 251--276. 
+  20.E.M. Stein and G. Weiss, Introduction to Fourier Analysis on Euclidan Spaces, Princeton University Press, Princeton N.J. 1971. 
+  21.M. Taylor, $L^p$ estimates on functions of the Laplace operator, Duke Math. J. 58 (1989), 773--793. MR 91d:58253 
+  22.G.N. Watson, A Treatise on the Theory of Bessel Functions, Cambridge Univ. Press, London 1962. 
+
+
+-------------------------------------------------------------------
+
+De Michele, Leonede(I-MILAN); Mauceri, Giancarlo(I-GENO) 
+$H\sp p$ multipliers on stratified groups. 
+Ann. Mat. Pura Appl. (4) 148 (1987), 353--366.
+
+Suppose $G$ is a stratified Lie group of homogeneous dimension $Q$,
+${\cal L}$ 
+is a sub-Laplacian on $G$, and $M$ is a bounded Borel function on $(0,\infty)$.  A. Hulanicki and  E. M.
+Stein \ref[see the reviewer and Stein, Hardy spaces on homogeneous groups, Princeton Univ. Press, Princeton, N.J., 1982; MR 84h:43027] proved that the operator $M({\cal L})$ is bounded on
+$H^p(G)$ for $Q/(Q+r)<p<\infty$, and in particular on $L^p(G)$ for $1<p<\infty$, provided that $M$ is of class $C^{(s)}$ and $|t^jM^{(j)}(t)|\le C$ for $j\le s$ where $s>r+(3Q/2)+2$. The
+authors obtain the same conclusion under the weaker hypothesis that $M$ satisfies an appropriate Lipschitz-Besov condition of order $s$ where $s>r+(Q/2)+1$. This hypothesis is nearly optimal;
+when $G=\bold R^n$ the sharp condition on $s$ is known to be $s>r+(n/2)$. The proof exploits the atomic and molecular characterizations of $H^p$ spaces.
+
+                                   Reviewed by Gerald B. Folland 
+
+
+-----------------------------------------
+
+\vspace{.4in}
+
+Kawazoe, Takeshi(J-KEIOES) 
+A characterization of the Poisson kernel on the classical real rank one symmetric spaces. 
+Tokyo J. Math. 15 (1992), no. 2, 365--379.
+
+
+Introduction: "Let $G$ be a connected real rank-one semisimple Lie
+group and $G=KAN$ an Iwasawa decomposition 
+for $G$. Let $\mathfrak{g}=\mf{ k}+\mf{a}+\mf{ n}$ denote the corresponding Iwasawa decomposition for the Lie algebra $\mf{ g}$ of $G$. We define $H(x)$ $(x\in G)$ as the unique element in
+$\mf{ a}$ such that $x\in K\exp H(x)N$ and put $\rho(H)={\rm tr}({\rm
+ad}(H)\vert \sb \mf{ n})$ for $H\in\mf{ a}$. 
+Let $M$ be the centralizer of $A$ in $K$
+and $\Delta$ the Laplace-Beltrami operator on $G/K$. Then the Poisson kernel $P\colon G/K\times K/M\to\bold R$ is given by
+$P(gK,kM)=\exp(-2\rho(H(g\sp {-1}k)))$, and for each $s\in\bold C$, $P\sp s$ is an eigenfunction of $\Delta$ with eigenvalue $\lambda\sb s$, say. Then our
+problem can be stated as follows. Problem: Let us suppose that a real-valued, $C\sp 2$ function $F$ on $G/K$ satisfies the following conditions: (1) $\Delta
+F=0$, (2) $\Delta F\sp 2=\lambda\sb 2F\sp 2$, (3) $F(eK)=1$. Then is $F$ determined by $F(gK)=P(gK,kM)$ for an element $kM$ in $K/M$? 
+
+"When $G={\rm SO}\sb 0(n,1)$ and ${\rm SU}(n,1)$, affirmative answers were obtained elsewhere [M. Chipot, P. Eymard and T. Tahani, in Symposia
+Mathematica, Vol. XXIX (Cortona, 1984), 111--129, Sympos. Math., 29, Academic Press, New York, 1987; MR 89i:43007; T. Tahani, "Fonctions propres
+de l'operateur de Laplace-Beltrami dans les boules hyperboliques reelle ou complex", Thesis, Univ. Nancy I, Vandoeuvre-les-Nancy, 1985; per bibl.; T.
+Kawazoe and T. Tahani, Tokyo J. Math. 11 (1988), no. 1, 37--55; MR 89h:22016]. However, their arguments are slightly dependent on each circumstance
+of the group. Therefore, it is worthwhile to give another proof which treats the problem uniformly, and apply it to the case of ${\rm Sp}(n,1)$. Now let $G$ be
+one of the classical real rank one semisimple Lie groups: ${\rm SO}\sb 0(n,1)$, ${\rm SU}(n,1)$ and ${\rm Sp}(n,1)$. In $§4$ we prove that if a real-valued
+$C\sp 2$ function $F$ on $G/K$ satisfies (1)--(3) and (4) $F$ is $M$-invariant, then $F$ is determined by the Poisson kernels. In $§5$ we try to remove this
+additional condition. Although we can remove it in the cases ${\rm SO}\sb 0(n,1)$ and ${\rm SU}(n,1)$, we need an assumption for the case of ${\rm
+Sp}(n,1)$, which can be stated as follows. We first identify $G/K$ $(G={\rm Sp}(n,1)$ and $K={\rm Sp}(n)\times{\rm Sp}(1))$ with the unit ball $D\sp n$ in
+$\bold H\sp n$ where $\bold H$ is the quaternions, and denote the standard coordinates on $\bold H\sp n$ by $w\sb 1,w\sb 2,\cdots,w\sb n$. Since $F$ is
+real analytic from (1), $F$ has a homogeneous expansion $F=\sum\sp \infty\sb {N=0}F\sb N$, where each $F\sb N$ is a homogeneous polynomial with
+degree $N$. Then we easily see that there exists an element $k\sb 0$ in $K$ such that the rotation $F\sb {k\sb 0}$ of $F$ defined by $F\sb {k\sb
+0}(w)=F(k\sb 0·w)$ $(w\in D\sp n)$ satisfies $(F\sb {k\sb 0})\sb 1(w)=(2n+1)(w\sb 1+\overline w\sb 1)$ (see (5.5)). Then the assumption which we need to
+obtain the affirmative answer to the above problem is the following: (5) $F\sb {k\sb 0}(cw\sb 1,w\sb 2,\cdots,w\sb n)=F\sb {k\sb 0}(w\sb 1c,w\sb 2,\cdots,
+w\sb n)$ for all $c$ in $\bold H$, i.e., $F\sb {k\sb 0}$ is a function of $w\sb 1+\overline w\sb 1$, $\vert w\sb 1\vert \sp 2$ and $w\sb s+\overline w\sb s$,
+$w\sb si-i\overline w\sb s$, $w\sb sj-j\overline w\sb s$, $w\sb sk-k\overline w\sb s$ $(2\leq s\leq n)$. Then if $F$ satisfies (1)--(3) and (5), $F(gK)$ is
+determined by the Poisson kernel $P(gK,k\sb 0M)$. Since $\bold R$ and $\bold C$ are abelian, the condition corresponding to (5) in the cases of $G={\rm
+SO}\sb 0(n,1)$ and ${\rm SU}(n,1)$ holds automatically, and thus there is no need to assume (5)."
+
+\vspace{.3in}
+
+Kawazoe, Takeshi(J-KEIO); Tahani, Taoufiq(F-LILL) 
+Correction to: "A characterization of the Poisson kernel associated with ${\rm SU}(1,n)$" [Tokyo J. Math. 11 (1988), no. 1, 37--55; MR 89h:22016].
+
+Tokyo J. Math. 17 (1994), no. 2, 495--497.
+22E30 (43A85)
+
+Jacques Faraut:
+
+In the paper cited in the heading the authors stated that a real
+function on the Riemannian symmetric space $G/K$, $G={\rm SU}(1,n)$, 
+which satisfies
+$DF=0$, $DF^2=\lambda F^2$, $F(eK)=1$, where $D$ is the Laplace operator, is equal to the Poisson kernel $P(gK,kM)$ for some point $kM$ on the
+boundary $K/M$. At some point of the proof there was a mistake in the computation of an integral. The idea of the new proof they propose is different, and
+could be extended to the case of ${\rm Sp}(1,n)$. 
+
+\vspace{.3in}
+
+Kawazoe, Takeshi(J-KEIO) 
+Atomic Hardy spaces on semisimple Lie groups. 
+Japan. J. Math. (N.S.) 11 (1985), no. 2, 293--343.
+
+The author gives a definition of Hardy spaces $H^1_{q,s}$ of $K$-invariant functions on a rank-one symmetric space $G/K$ of noncompact type. To some
+extent he follows the lines of a paper by  R. R. Coifman and 
+G. Weiss \ref[Bull. 
+Amer. Math. Soc. 83 (1977), no. 4, 569--645;] to
+define $(q,s)$-atoms as the building blocks of $H^1_{q,s}$, even though $G/K$ is not a space of homogeneous type. The fact that only atoms centered at
+the origin are used makes these spaces too small to be considered analogues of the classical Hardy spaces. For instance, the definition proposed here,
+when applied to the Euclidean symmetric space $ R^n\rtimes {\rm SO}(n)/{\rm SO}(n)$, does not lead to the space of radial functions in $H^1( R^n)$.
+However, a characterization of $H^1 _{\infty,0}$ is given in terms of nondecreasing $L^1$ dominating functions and various results are given about the
+boundedness from $H^1_{q,s}$ to $L^1$ of maximal operators, Fourier multipliers and pseudodifferential operators.
+
+
+\vspace{.3in}
+ Kawazoe, Takeshi Atomic Hardy spaces on semisimple Lie groups. Noncommutative harmonic analysis and Lie groups (Marseille-Luminy, 1985),
+  189--197, Lecture Notes in Math., 1243, Springer, Berlin, 1987.
+Kawazoe, Takeshi 
+Atomic Hardy spaces on semisimple Lie groups. 
+Noncommutative harmonic analysis and Lie groups (Marseille-Luminy, 1985), 189--197, 
+Lecture Notes in Math., 1243, 
+Springer, Berlin, 1987. 
+
+Gerald B. Folland:
+
+The author defines $H^1$ atoms and molecules in the context of $K$-bi-invariant functions on a semisimple Lie group. He shows that an appropriate grand
+maximal function is bounded from atomic $H^1$ to $L^1$ and that molecules have atomic decompositions. 
+
+{For the entire collection see MR 88b:22001.}
+
+\vspace{.3in}
+
+$KA$-wavelets on semisimple Lie groups and quasi-orthogonality of matrix coefficients. 
+Infinite dimensional harmonic analysis (Kyoto, 1999), 238--252, 
+Gräbner, Altendorf, 2000. 
+
+This is an excellent article connecting integral wavelet transforms
+and representations of semisimple Lie groups. 
+Emphasis is placed on the group
+$G:= {\rm SU}(1,1)$, the weighted Bergman spaces $\mathcal{H}_h$ and
+the holomorphic discrete series of $G$. 
+More precisely, the author proves that
+there are a $\varphi\in\mathcal{H}:={\rm Cal}\,\mathcal{ H}_{1/2}$ and a
+representation $T$ of $G$ over $\mathcal{ H}$ 
+such that $$f=\text{const}·\int_K dk\int_A\langle
+f, T(ka_t)\varphi\rangle T(ka_t)\varphi\sinh2t\,dt,$$ for all $f\in\mathcal{ H}$, a finite dimensional subspace, where $\langle,\rangle$ denotes the scalar product in
+${\rm Cal}\,\mathcal{ H}$, and $K$ and $A$ denote the groups of Euclidean and hyperbolic rotations, respectively. 
+
+The article will be useful for a graduate course in wavelet and group theory. 
+
+
+
+Wavelet transforms associated to a principal series representation of semisimple Lie groups. I, II. 
+Proc. Japan Acad. Ser. A Math. Sci. 71 (1995), no. 7, 154--157, 158--160.
+
+ "We investigate a transform associated to a principal series representation of noncompact semisimple Lie groups and we obtain a
+generalization of the Grossmann-Morlet transform and the Calderón identity. A transform associated to the analytic continuation of the holomorphic discrete
+series and its limit will be treated in a forthcoming paper \ref[T. Kawazoe, "A transform associated to the analytic continuation of the holomorphic discrete
+series of a semisimple Lie group", manuscript; per bibl.]. 
+
+"Let $G$ be a noncompact connected semisimple Lie group with finite center and $P=MAN$ a parabolic subgroup of $G$. Let $\pi_\lambda={\rm
+Ind}^G_P(1\otimes e^\lambda\otimes 1) (\lambda\in {a}^*_ C)$ denote a principal series representation of $G$ and $(\pi_\lambda,L^2(\overline{N},
+e^{-2{\rm Im}\,\lambda(H(\overline n))}d\overline n))$ $(\overline N=\theta(N))$ the noncompact picture of $\pi_\lambda$. Let $\sigma_\omega$ denote an
+irreducible unitary representation of $\overline N$ corresponding to $\omega\in\overline{ n}{}^*_ C$ and $(S,ds)$ a subset of $MA$ with measure $ds$.
+In Part I we assume that there exists a $\phi\in\mathcal{ S}'(\overline N)$
+satisfying the following admissible 
+condition: for all $\omega\in V'_T$
+$$\sigma_\omega(\phi)\sigma_\omega(\phi)^*=n_\phi(\omega)I,\qquad{\rm
+i}$$ 
+
+$$0<\int_S n_\phi({\rm Ad}(s)\omega)ds=c_{S,\phi}<\infty,\qquad{\rm
+ii}$$ 
+where $c_{S,\phi}$ is independent of $\omega$. Then for all such
+$\phi$ we can deduce the inversion 
+formula: $$f(x)=c^{-1}_{S,\phi}\iint_{\overline{N}\times
+S}\langle
+f,\pi_{-i\rho}(\overline{n}s)\phi\rangle\pi_{-i\rho}(\overline{n}s)\phi(x)d\overline{n}ds\ 
+\forall f\in\mathcal{ S}(\overline N),$$ where $\langle·,·\rangle$ is the
+inner product of $L^2(\overline N)$. A number of well-known examples of wavelet transforms arise from this scheme through the explicit form of $\phi$.
+However, in the case of $G={\rm SL}(n+2,\bold R) (n\geq 1)$ and $\overline N\cong H_n$, the $(2n+1)$-dimensional Heisenberg group, the above formula
+does not cover the three examples constructed by C. Kalisa and B. Torrésani \ref[see Ann. Inst. H. Poincaré Phys. Théor. 59 (1993), no. 2, 201--236; MR
+95i:22033]. Therefore, in order to obtain a widespread application we need to generalize this formula."
+
+
+Kawazoe, Takeshi(J-KEIOE) 
+Wavelet transform associated to an induced representation of ${\rm SL}(n+2,\bold R)$. (English. English, French summary) 
+Ann. Inst. H. Poincaré Phys. Théor. 65 (1996), no. 1, 1--13.
+22E70 (43A80 81R30)
+
+G. C. Bohnké:
+
+Since the paper of A. Grossmann, J. Morlet and T. Paul \ref[J. Math. Phys. 26 (1985), no. 10, 2473--2479; MR 86k:22013] much work on the "continuous
+wavelet transform" has been done, more or less in the spirit of Lie group theory. Here the author constructs the wavelet transform via the induced
+representation machinery in the ${\rm SL}(n+2,\bold R)$ case. 
+
+From the summary: "Let $G={\rm SL}(n+2,\bold R)$ and let $P=MAN$ be a parabolic subgroup of $G$ such that $N$ is isomorphic to the Heisenberg group
+$H_n$. Let $1\otimes e^\lambda\otimes 1$ be a representation of $P$ and let $\pi_\lambda=\break {\rm Ind}_P^G(1\otimes e^\lambda\otimes 1)$ be the
+induced representation of $G$ acting on $L^2(H_n)$. In this paper we
+obtain a condition on $\lambda$ and
+ $\psi\in \mathcal{ S}'(H_n)$ for which the matrix
+coefficients $\langle f,\pi_\lambda(g)\psi\rangle_{L^2(H_n)}$ are square-integrable on a subgroup $\overline NA_1\simeq H_n\times \bold R$ of $G$ and
+$\|f\|^2_{L^2(H_n)}=c\iint_{\overline NA_1}|\langle f,\pi_\lambda(\overline na_1)\psi\rangle_{L^2(H_n)}|^2d\overline nda_1\text{ for all } f\in \mathcal{ S}(H_n).$" 
+
+Examples are given for several admissible functions $\psi (h)=\alpha(p,q)\beta(t)$, $h=(p,q,t)\in H_n\approx\bold R^n\times\bold R^n\times \bold R$. (In the
+case of ${\rm SL}(2,\bold R)$, the function $\alpha(p,q)$ is disregarded and one recovers the classical wavelet transform associated to the affine "$ax+b$"
+group.) 
+
+The author also announces further results in a more general setting which will appear in forthcoming papers.
+
+
+-------------------------------------------
+
+Kenig, C. E.; Stanton, R. J.; Tomas, P. A. Divergence of eigenfunction expansions. J. Funct. Anal. 46 (1982), no. 1, 28--44.
+
+
+The authors prove transplantation theorems for families of commuting differential operators on a smooth paracompact $n$-dimensional manifold $\Omega$. These allow us to deduce from uniform
+boundedness as $R\rightarrow\infty$ of operators on $L^p(\Omega)$ of the form $Q_Km_R(P_1,\cdots,P_k)Q_K$, boundedness of the operator $m(p_1(x,\xi),\cdots,p_k(x,\xi))$ on $L^p(
+R^n)$. (Here, $m\colon R^k\rightarrow R$ is a bounded Borel function, $\{P_1,\cdots,P_k\}$ a commuting set of symmetric differential operators with selfadjoint extensions to $L^2(\Omega)$,
+$p_j$ is the principal symbol of $P_j$, $K$ a subset of $\Omega$ of positive measure, $x$ a point of density of $K$, and $Q_K\colon L^2\rightarrow L^2\colon f\rightarrow\chi_Kf$. If $m_j$ is
+the degree of $P_j$, then $m_R(x_1,\cdots,x_k)$ is defined to be $m(R^{-m_1}x_1,\cdots,R^{-m_k}x_k)$.) The method of proof is based on a theorem of B. S. Mityagin [ Linear operators and
+approximation, II\/ (Oberwolfach, 1974), pp. 521--530, Birkhäuser, Basel, 1974] combined with a theorem of Rellich's on the convergence of spectral expansions. These techniques
+are also used to give weak type $(p,p)$ results. 
+
+The transplantation theorems are then combined with results of Kenig and Tomas [Bull. Amer. Math. Soc. (N.S.) 1 (1979), no. 4, 694--697; MR 81g:42019] to give negative results on summability
+methods for a noncompact semisimple Lie group $G$. For example, if $m$ is a bounded Borel function on $ R^l$, not identically zero, such that $m(x)=O(|x|^{-\varepsilon})$ for some
+$\varepsilon>0$, and $S_R$ denotes the summability method on $G$ defined by $m$, then for each $p\neq 2$, there is $f\in L^p(G)$ so that $\|S_Rf-f\|_p\rightarrow 0$. If $1<p<2$, then for
+some $f\in L^p(G)$, $\sup_R|S_Rf|=\infty$ almost everywhere. Another application: Projection onto the discrete series of $\text{SL}(2, R)$ is $L^p$ bounded if and only if $p=2$. (This answers a
+question of Stein.)
+
+
+
+----by A. H. Dooley 
+
+
+
+-----------------------------------
+
+
+Cowling, Michael 
+The Kunze-Stein phenomenon. 
+Ann. Math. (2) 107 (1978), no. 2, 209--234.
+
+Let $G$ be a connected semisimple Lie group with finite center. In this interesting paper the author studies the convolution of functions on $G$. The
+following theorem is proved: if $1\leq p<2$, then $L^p(G)*L^2(G)\subseteq L^2(G)$. Special cases of this result were obtained by several authors.
+
+-------------------------------------
+
+Kunze, R. A.; Stein, E. M. 
+Uniformly bounded representations and harmonic analysis of the $2\times 2$ real unimodular group. 
+Amer. J. Math. 82 1960 1--62.
+
+This paper contains a remarkably detailed study of representations of and harmonic analysis on the group $G$ of $2\times 2$ real unimodular matrices. The
+continuous irreducible unitary representations of $G$ were found long
+ago by Gel'fand and Neumark 
+[Acad. Sci. USSR J. Phys. 10 (1946),
+93--94; MR 8, 132; Izv. Akad. Nauk SSSR Ser. Mat. 11 (1947), 411--504; MR 9, 495] and independently by V. Bargmann [Ann. of Math. (2) 48 (1947),
+568--640; MR 9, 133]. Plancherel's formula for this group was established by Harish-Chandra [Proc. Nat. Acad. Sci. U.S.A. 38 (1952), 337--342; MR 13,
+820]. To explain the results of this paper, some notation is needed. 
+A generic element $g$ of $G$ is a matrix 
+$\left( \begin{array}{cc}
+ a & b \\ 
+c & d 
+\end{array} \right)$;
+$ad-bc=1$; $a,b,c,d\in R$. For $g\in G$, $x\in R$, and $s\in C$, let $\phi^+(g,x,s)=|bx+d|^{2s-2}$, $\phi^-(g,x,s)=\text{sgn}(bx+d)\phi^+(g,x,s)$. For $g\in G$
+and $x\in R$, let $g(x)=(ax+c)/(bx+d)$. For complex-valued functions $f$ on $ R$, let $$ (v^±(g,s)f)(x)=\phi^±(g,x,s)f\circ g(x). $$ The linear operators
+$v^±(g,s)$ obviously provide representations of $G$. The representations $g\rightarrow v^±(g,\frac 1{2}+it) (t\in R)$ acting on $L_2( R)$ are continuous,
+irreducible and unitary, and are called the two principal continuous series. The representations $g\rightarrow v^+(g,\sigma) (0<\sigma<{\textstyle\frac
+1{2}})$, acting on the Hilbert space $H_\sigma$ of functions on $ R$ with inner product $$ a_\sigma\int_{ R}\int_{ R}f(x)\overline{f(y)}|x-y|^{-2\sigma}\,dxdy,
+$$ are also continuous, irreducible and unitary, and are called the complementary series. Finally, there are two discrete series of continuous irreducible
+unitary representations of $G$; these play only a minor rôle in the present paper. 
+
+A main result of the paper is that the representations of the principal and complementary series can be analytically continued into the set $\{s\in C\colon
+0<\text{Re}(s)<1\}= S$ in the following sense. There are a separable
+Hilbert space $\mathcal{H}$ and
+ representations $g\rightarrow U^±(g,s)$ of $G$ on $\mathcal{H}$
+such that: (1) $g\rightarrow U^±(g,s)$ is a continuous representation of $G$ for each $s\in S$; (2) $g\rightarrow U^±(g,{\textstyle\frac 1{2}}+it) (t\in R)$ is
+unitarily equivalent to the representation $g\rightarrow v^±(g,{\textstyle\frac 1{2}}+it)$ of the principal continuous series; (3) $g\rightarrow U^+(g,\sigma)
+(0<\sigma<{\textstyle\frac 1{2}})$ is unitarily equivalent to the representation $g\rightarrow v^+(g,\sigma)$ of the complementary series; (4) for $g$ fixed in
+$G$, and $\xi,\eta$ fixed in $\mathcal{ H}$, the function
+$s\rightarrow\langle U^±(g,s)\xi,\eta\rangle$ is analytic 
+in $S$; 
+$$ \sup\{\|U^±(g,\sigma+it)\|\colon g\in
+G\}\leq A_{\sigma,\varepsilon}(1+|t|)^{|\sigma-1/2|(1+\varepsilon)}
+\qquad(5) $$ 
+for $0<\sigma<1$ and $\varepsilon>0$, where $A_{\sigma,\varepsilon}>0$ and is
+bounded on every interval $0<\alpha\leq\sigma\leq\beta<1$. 
+
+The authors use the representations $U^±(g,s) (s\in S)$ to obtain a complete analogue of the Hausdorff-Young theorem for $G$. A bounded linear operator
+$A$ on the separable Hilbert space $\mathcal{ H}$ is in $\mathcal{ B}_p (1\leq p<\infty)$ if the non-negative operator $(A^*A)^{1/2}=|A|$ has discrete spectrum
+$(\lambda_1,\lambda_2,\cdots,\lambda_n,\cdots)$ and
+$\|A\|_p=[\sum_{n=1}^\infty\lambda_n{}^p]^{1/p}$ is finite. 
+For $f\in L_1(G)$ and $s\in S$, let
+$\mathcal{F}^±(s)=\int_GU^±(g,s)f(g)\,dg$. 
+This is the [operator-valued] Fourier transform of $f$. Let $1<p<2$,
+and $q=p/(p-1)$. 
+There is a measure $\mu_{q,\sigma}$ on
+$ R$ such that for all $f\in L_1(G)\cap L_p(G)$, $$
+\left[\int_{-\infty}^\infty\|\mathcal{F}^±(\sigma+it)\|_q{}^q\,d\mu_{q,\sigma}(t)\right]^{1/q}\leq\|f\|_p.
+\qquad (1) $$ The
+Fourier transform admits a [unique] linear bounded extension over all
+of $L_p(G)$ for which (1) holds. 
+Furthermore, $\mathcal{ F}^±(s)$ is analytic in $s$.
+Analogous results using only the discrete series hold for $p\in[1,2]$. 
+
+The Hausdorff-Young inequality (1), involving the whole strip $ S$ instead of only the line $\text{Re}\,s={\textstyle\frac 1{2}}$, has some curious
+consequences. If $f\in L_2(G)$ and $g\in L_p(G)$, $1\leq p<2$, then $f*g\in L_2(G)$ and $\|f*g\|_2\leq A_p\|f\|_2·\|g\|_p$. If $g\in L_2(G)$, then $f*g\in L_q(G)$
+for all $q\in\,]2,\infty]$, and $\|f*g\|_q\leq A_q\|f\|_2·\|g\|_2$. Both of these assertions hold trivially for compact groups and fail for the simplest non-compact
+Abelian groups, e.g., for the group $ R$. 
+
+This paper is nearly self-contained, and it is very carefully written. It is an important step in realizing the possibilities for detailed harmonic analysis that are
+implicit in the Gel'fand-Raikov theorem.
+
+
+------------------------------------------
+
+Koornwinder, Tom H.(NL-VUAM) 
+Jacobi functions and analysis on noncompact semisimple Lie groups. 
+Special functions: group theoretical aspects and applications, 1--85, 
+Math. Appl., 
+Reidel, Dordrecht, 1984. 
+
+From the introduction: "There are many group-theoretic interpretations of Jacobi functions, first as spherical functions on noncompact Riemannian
+symmetric spaces of rank one, but also as associated spherical functions, intertwining functions, matrix elements of (representations of) ${\rm SL}(2, R)$ and
+spherical functions on certain nonsymmetric Gel'fand pairs. This makes Jacobi functions an ideal subject for the case study of the interactions
+between special functions and group theory." 
+
+This paper is a nice survey of this topic, with the personal point of view of the author, and with many published and unpublished results of his own. At the
+same time the author has gathered together a great amount of information about the numerous ramifications of the subject. After recalling classical facts first
+about the Jacobi functions and the Jacobi transform, then about the
+theory of Gel'fand pairs and spherical 
+functions, the author studies the Jacobi
+functions as spherical functions on rank one symmetric spaces, as associated spherical functions and as functions on certain non-Riemannian symmetric
+spaces. He studies further the Abel transform using the Riemann-Liouville and Weyl transforms, and using them, he gives a proof of the Paley-Wiener
+theorem for the Jacobi transform. The last parts are devoted to the convolution structure associated with the Jacobi transform, the addition formula and the
+dual convolution structure. 
+
+{For the entire collection see MR 85i:22003.}
+
+                                 Reviewed by Jacques Faraut 
+
+-----------------------------------------------------------------
+
+Flensted-Jensen, Mogens; Koornwinder, Tom 
+The convolution structure for Jacobi function expansions. 
+Ark. Mat. 11, 245--262. (1973). 
+
+G. Gasper:
+
+Let $R_µ{}^{(\alpha,\beta)}(x)=F[-µ,µ+\alpha+\beta+1;\alpha+1;(1-x)/2]$, where $F$ is the hypergeometric function. The Jacobi functions (a noncompact
+analogue of the Jacobi polynomials $R_n{}^{(\alpha,\beta)}(x)$, $n=0,1,2,\cdots$) are defined by
+$\phi_\lambda{}^{(\alpha,\beta)}(t)=R_{(i\lambda-\rho)/2}^{(\alpha,\beta)}(\cosh 2t)$, where $\rho=\alpha+\beta+1$, $0\leq t<\infty$, and $\lambda$ is a
+complex number. H. Bateman's formula [ Partial differential equations of mathematical physics, Cambridge Univ. Press, Cambridge, 1932; Zbl 4, 214; revised edition,
+Dover, New York, 1944; MR 6, 86; reprint of first edition, Cambridge Univ. Press, New York, 1959] for the product of two Jacobi polynomials,
+$R_n{}^{(\alpha,\beta)}(x)R_n{}^{(\alpha,\beta)}(y)=\sum_ka_k(x+y)^kR_k{}^{(\alpha,\beta)}((1+xy)/(x+y))$, is extended to the case in which $n$ is not
+necessarily an integer, and the extension is used to show that if $\alpha\geq\beta\geq-1/2$, then the product
+$\phi_\lambda{}^{(\alpha,\beta)}(t_1)\phi_\lambda{}^{(\alpha,\beta)}(t_2)$ of two Jacobi functions can be represented as an integral of a Jacobi function
+$\phi_\lambda{}^{(\alpha,\beta)}(t_3)$ with a nonnegative kernel. The integral is then used to define a generalized translation operator, the convolution
+product of two suitable functions, and to obtain convolution structure results for $\alpha\geq\beta\geq-1/2$ similar to those which were obtained by the
+reviewer [Ann. of Math. (2) 95 (1972), 261--280] for
+Jacobi series with less restrictive conditions 
+on $(\alpha,\beta)$.
+
+                                 ( Reviewed by G. Gasper )
+--------------------------------------
+
+Koornwinder, Tom H.(NL-AMSTM) 
+Fast wavelet transforms and Calderón-Zygmund operators. (English. English summary) 
+Wavelets: an elementary treatment of theory and applications, 161--182, 
+Ser. Approx. Decompos., 1, 
+World Sci. Publishing, River Edge, NJ, 1993. 
+
+The paper is a detailed account of a part of a previous paper \ref[G. Beylkin, R. R. Coifman and V. V. Rokhlin, Comm. Pure Appl. Math. 44 (1991), no. 2,
+141--183; MR 92c:65061] connected with utilization of wavelet techniques for computation, with prescribed accuracy, of the action of a
+Calderón-Zygmund operator on a function on $[0,1]$. 
+
+{For the entire collection see MR 94c:42001.}
+
+--------------------------------------------------
+
+
+\begin{thebibliography}{99}
+%\input{ref.tex}
+\bibitem{Ank} J.-Ph. Anker , Sharp estimates for some functions of the Laplacian on
+   noncompact symmetric spaces. Duke Math. J. 65 (1992), pp. 257-297.
+
+\bibitem{AsKooSch}
+  Special functions: group theoretical aspects and
+applications. Edited by R. A. Askey, T. H. Koornwinder 
+and W. Schempp. {\em Mathematics
+  and its Applications}. D. Reidel Publishing Co., Dordrecht, 1984. 
+
+\bibitem{Cl}
+Clerc, Jean-Louis Bochner-Riesz means of $H\sp p$ functions $(0<p<1)$ on compact Lie groups. Noncommutative harmonic analysis and Lie groups (Marseille-Luminy, 1985),
+  86--107, Lecture Notes in Math., 1243, Springer, Berlin,
+1987. (Reviewer: Fulvio Ricci) 
+
+\bibitem{ClSte}
+J. L. Clerc and E. M. Stein , Lp-multipliers for non-compact symmetric spaces.
+   Proc. Nat. Acad. Sci. USA 71 (1974), pp. 3911-3912.
+
+\bibitem{Cow}
+ Cowling, Michael G. Harmonic analysis on semigroups, {\em Ann. of
+Math.(2)}, {\bf 117}, (1983), 
+no. 2, 267--283.
+
+\bibitem{Cow}
+ Cowling, Michael, The Kunze-Stein phenomenon, {\em Ann. Math.(2)},
+{\bf 107}(2), (1978), 209--234. 
+ 
+\bibitem{CowGM}
+ Cowling, Michael; Giulini, S.; Meda, Stefano Oscillatory multipliers
+related to the wave equation on noncompact 
+symmetric spaces, {\em  J.
+  London Math. Soc}., (2) 66 (2002), no. 3, 691--709.
+
+\bibitem{CowGM}
+Cowling, Michael; Giulini, Saverio; Meda, Stefano,
+ $L\sp p$-$L\sp q$ estimates for functions of the Laplace-Beltrami operator on
+  noncompact symmetric spaces. I. Duke Math. J. 72 (1993), no. 1,
+ 109--150. 
+
+\bibitem{CowGM}
+Cowling, Michael; Giulini, Saverio; Meda, Stefano $L\sp p$-$L\sp q$-estimates for functions of the Laplace-Beltrami operator on
+  noncompact symmetric spaces. II. J. Lie Theory 5 (1995), no. 1, 1--14.
+
+\bibitem{CowGM}
+Cowling, M.; Giulini, S.; Meda, S. $L\sp p$--$L\sp q$ estimates for functions of the Laplace-Beltrami operator on noncompact symmetric
+  spaces. III. Ann. Inst. Fourier (Grenoble) 51 (2001), no. 4,
+1047--1069. 
+
+\bibitem{CowSik}
+ Cowling, Michael, Sikora, Adam, A spectral multiplier theorem for a
+sublaplacian on $\rm SU(2)$,
+{\em  Math. Z}., {\bf 238}(1), (2001), 1--36.
+
+\bibitem{DeMMau}
+De Michele, Leonede; Mauceri, Giancarlo $H\sp p$ multipliers on
+stratified groups, {\em Ann. Mat. Pura Appl}., {\bf 148}(4), (1987),
+353--366. 
+(Reviewer: Gerald B. Folland)
+
+\bibitem{Fl-J} M. Flensted-Jensen , Paley-Wiener type theorems for a differential operator
+   connected with symmetric spaces. Ark. Mat. 10 (1972), pp. 143-162. MathSciNet
+
+\bibitem{FlKoo}
+ Flensted-Jensen, Mogens; Koornwinder, Tom, The convolution structure
+for Jacobi function expansions,
+{\em Ark. Mat}., {\bf 11}, 245--262. (1973).
+
+\bibitem{Fol}
+Folland, Gerald B., {\em Harmonic analysis in phase space}, {\em Annals of
+Mathematics Studies}, {\bf 122}. 
+Princeton University Press, Princeton, NJ, 1989.
+
+\bibitem{FoSte}
+ G. B. Folland and E. M. Stein, {\em Hardy Spaces on Homogeneous
+Groups}, {\bf Math.Notes}, {\bf 28}, Princeton Univ. Press, Princeton (1982).
+
+\bibitem{GiuM}
+Giulini, Saverio; Mauceri, Giancarlo Almost everywhere convergence of Riesz means on certain noncompact symmetric spaces. Ann. Mat. Pura Appl. (4) 159 (1991), 357--369.
+  (Reviewer: Michael Cowling)
+
+\bibitem{GiuMM}
+Giulini, Saverio; Mauceri, Giancarlo; Meda, Stefano $L\sp p$ multipliers on noncompact symmetric spaces. J. Reine Angew. Math. 482 (1997), 151--175. (Reviewer: Tomasz
+  Przebinda)
+
+\bibitem{GiuSj}
+Giulini, Saverio(I-GENOE); Sjögren, Peter, 
+A note on maximal functions on a solvable Lie group. 
+{\em Arch. Math. (Basel)}, {\bf 55}(2), (1990), 156--160.
+
+\bibitem{Hel}
+S. Helgason, {\em Differential Geometry and Symmetric Spaces}, Academic Press,
+   San Diego (1962).
+
+\bibitem{HulJen}
+Hulanicki, Andrzej; Jenkins, Joe W. Almost everywhere summability on nilmanifolds. Trans. Amer. Math. Soc. 278 (1983), no. 2, 703--715. (Reviewer: J. Boidol) 
+
+\bibitem{HulJen2}
+Hulanicki, Andrzej; Jenkins, Joe W. Nilpotent Lie groups and summability of eigenfunction expansions of Schrödinger operators. Studia Math. 80 (1984), no. 3, 235--244.
+  (Reviewer: L. Corwin) 22E30 (22E25 47B38)
+
+\bibitem{HulJen3}
+ Hulanicki, Andrzej; Jenkins, Joe W. Nilpotent Lie groups and eigenfunction expansions of Schrödinger operators. II. Studia Math. 87 (1987), no. 3, 239--252. (Reviewer: L.
+  Corwin)
+
+\bibitem{Ion}
+Alexandru D. Ionescu, Fourier integral operators on noncompact symmetric spaces of real rank one. Journal of
+Functional Analysis 174, 274--300 (2000).
+
+\bibitem{Ion}
+ Alexandru D. Ionescu, An endpoint estimate for the Kunze-Stein phenomenon and related maximal operators.
+Annals of Mathematics 152, 259--275 (2000). 
+
+\bibitem{Ion}
+ Alexandru D. Ionescu, A maximal operator and a covering lemma on non-compact symmetric spaces.
+Mathematical Research Letters 7, 83--93 (2000). 
+
+\bibitem{Ion}
+ Alexandru D. Ionescu, On the Poisson transform on symmetric spaces of real rank one. Journal of Functional
+Analysis 174, 513--523 (2000). 
+
+\bibitem{Ion}
+ Alexandru D. Ionescu, Singular integrals on symmetric spaces of real rank one. To appear in Duke Mathematical
+Journal.
+
+\bibitem{Ion}
+ Alexandru D. Ionescu, Singular integrals on symmetric spaces, II. Preprint 2001.
+
+%\bibitem{Ion}
+% Alexandru D. Ionescu, Rearrangement inequalities on semisimple Lie groups. Preprint 2001. 
+
+\bibitem{Ion}
+ Alexandru D. Ionescu and David Jerison, On the absence of positive eigenvalues of Schrodinger operators with rough
+potentials. Preprint 2002.
+
+\bibitem{Ka} Kawazoe, T., Hardy spaces and maximal operators on real
+rank one semisimple Lie groups, {\em I}, {\em  Tohoku Math. J.(2)},
+{\bf 52}(1), (2000), 1--18. (Reviewer: Gerald B. Folland)
+
+\bibitem{Ka} Kawazoe, T.,  $L^1$ estimates for maximal functions and
+Riesz transform on real rank $1$ semisimple Lie groups. {\em
+J. Funct. Anal.}, {\bf 157}(2),
+  (1998), 327--357.
+
+\bibitem{Ka} Kawazoe, T., A characterization of the Poisson kernel on
+the classical real rank one symmetric spaces, {\em Tokyo J. Math.},
+{\bf 15}(2), (1992), 365--379.
+
+\bibitem{Ka}
+Kawazoe, T., Atomic Hardy spaces on semisimple Lie groups, {\em
+Japan. J. Math. (N.S.)}, {\bf 11}(2), (1985), 293--343. (Reviewer: Fulvio
+  Ricci)
+
+\bibitem{Ka}
+Kawazoe, T., Atomic Hardy spaces on semisimple Lie groups, {\em
+Noncommutative harmonic analysis and Lie groups}
+ (Marseille-Luminy, 1985),
+  189--197, {\em Lecture Notes in Math.}, {\bf 1243}, Springer, Berlin, 1987. (Reviewer: Gerald B. Folland)
+
+\bibitem{Ka}
+Kawazoe, T., Wavelet transform associated to an induced representation
+of ${\rm SL}(n+2,\bold R)$,
+{\em Ann. Inst. H. Poincaré Phys. Théor.}, {\bf 65}(1),
+  (1996), 1--13. (Reviewer: G. C. Bohnké) 
+ 
+\bibitem{Ka}
+Kawazoe, T., Wavelet transforms associated to a principal series
+representation of semisimple Lie groups. I, II. 
+{\em Proc. Japan Acad. Ser. A
+  Math. Sci.}, {\bf 71(7)}, (1995), 154--157, 158--160.
+
+\bibitem{Ka}
+Kawazoe, T., $KA$-wavelets on semisimple Lie groups and
+quasi-orthogonality of matrix coefficients. 
+{\em Infinite dimensional harmonic
+  analysis} (Kyoto, 1999), 238--252, Gräbner, Altendorf, 2000. 
+                                
+\bibitem{KaLiu} Kawazoe, T.; Liu, J. On a weak $L^1 1$ property of
+maximal operators on non-compact semisimple Lie groups. {\em Tokyo
+J. Math.}, {\bf 25}(1), (2002), 165--180.
+
+\bibitem{KaTa}
+Kawazoe, T., Tahani, Taoufiq, A characterization of the Poisson kernel
+associated with ${\rm SU}(1,n)$, 
+{\em Tokyo J. Math.}, {\bf 11}(1), (1988), 37--55. (Reviewer: Jacques
+Faraut)
+
+\bibitem{KaTa} Kawazoe, T., Tahani, Taoufiq, Correction to: "A
+characterization of the Poisson kernel associated 
+with ${\rm SU}(1,n)$" [Tokyo J.
+  Math. 11 (1988), no. 1, 37--55; MR 89h:22016], {\em Tokyo J. Math.},
+{\bf 17}(2), (1994), 495--497. (Reviewer: Jacques Faraut)
+ 
+\bibitem{KST}
+Kenig, C. E.; Stanton, R. J.; Tomas, P. A. Divergence of eigenfunction expansions. J. Funct. Anal. 46 (1982), no. 1, 28--44.
+ 
+\bibitem{Koo}
+ Koornwinder, Tom H. Jacobi functions and analysis on noncompact
+semisimple Lie groups. 
+Special functions: group theoretical aspects and
+  applications, 1--85, Math. Appl., Reidel, Dordrecht, 1984. (Reviewer: Jacques Faraut)
+ 
+\bibitem{Koo}
+ Koornwinder, Tom H. Fast wavelet transforms and Calderón-Zygmund
+operators.
+ Wavelets: an elementary treatment of theory and applications,
+  161--182, Ser. Approx. Decompos., 1, World Sci. Publishing, River
+Edge, NJ, 1993. 
+
+\bibitem{L}                               
+ Liu, Heping The $H\sp p$ boundedness of Riesz means on the Heisenberg group. A Chinese summary appears in Acta Math. Sinica 39 (1996), no. 1, 140. Acta Math. Sinica
+  (N.S.) 11 (1995), Special Issue, 18--25. (Reviewer: Norman J. Weiss)
+
+\bibitem{LLu}
+ Liu, He Ping; Lu, Shan Zhen The $H\sp p$-boundedness of the Riesz means for the eigenfunction expansions for elliptic operators with constant coefficients. Proc. Amer. Math.
+  Soc. 122 (1994), no. 2, 487--494. (Reviewer: Günter Berger) 
+
+\bibitem{Liu} Liu, Jianming,
+ Maximal functions associated with the Jacobi transform, {\em
+Bull. London Math. Soc}., {\bf 32}(5), (2000), 582--588.
+
+\bibitem{Lo}
+ N. Lohoué , Transformés de Riesz et fonctions sommables, {\em
+Amer. J. Math}., {\bf 114}, (1992), pp. 875-9.
+                                
+%\bibitem{Perez}
+%P\'erez, Carlos, Endpoint estimates for commutators of singular integral
+%operators, {\em J. Funct. Anal}. {\bf 128} (1995), no. 1, 163--185. 
+
+
+%\bibitem{Perez2}
+%P\'erez, C. On a theorem of Muckenhoupt and Wheeden and a weighted
+%inequality related to Schr\"odinger operators, {\em
+%Trans. Amer. Math. Soc.}, {\bf 340} (1993), no. 2, 549--562.
+
+\bibitem{ST}
+ Stanton, Robert J.; Tomas, Peter A. Expansions for spherical functions on noncompact symmetric spaces. Acta Math. 140 (1978), no. 3-4, 251--276. 
+
+\bibitem{ST2}
+Stanton, Robert J.; Tomas, Peter A. 
+Pointwise inversion of the spherical transform on $L\sp{p}(G/K)$, $1\leq p<2$. 
+{\em Proc. Amer. Math. Soc.}, {\bf 73}(3), (1979), 398--404.
+
+\bibitem{Ste}
+ E. M. Stein, {\em Harmonic Analysis: Real-Variable Methods, Orthogonality, and
+   Oscillatory Integrals}, Princeton Math. Ser. 43, Princeton Univ. Press, Princeton
+   (1993).
+
+\bibitem{St}
+
+
+
+\bibitem{Stro}
+ J. Strömberg , Weak type estimates for maximal functions on non-compact
+   symmetric spaces, {\em Ann. of Math}., {\bf 114}, (1981), pp. 115-126.
+
+\bibitem{TW}
+ M. H. Taibleson and G. Weiss , The molecule characterization of certain
+   Hardy spaces, {\em Astérisque}, {\bf 77}, (1980), pp. 68-149.
+
+\bibitem{Wa}
+ G. Warner Harmonic Analysis on Semi-Simple Lie Groups II,
+   Springer-Verlag, Berlin/ New York (1972). 
+
+\end{thebibliography}
+
+\end{document} 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+<html><head><title> Quantum Computing </title>
+
+<style>
+<!--
+
+a{ color: rgb(0,0,255); text-decoration: none }
+
+a:hover{ text-decoration: underline; color: rgb(255,0,0) }
+
+//p {  }
+-->
+</style></head>
+
+
+<body bgcolor="#f0f0f0" link="#0000ff" vlink="#802255" alink="#ff8888" background="../Img/back59.GIF">
+
+<div align="center">
+<table border="0" cellspacing="10" cellpadding="0" width="1200"><tbody><tr>
+<td valign="top" align="left"><img src="../Img/qtclogosm.GIF"></td>
+<td valign="bottom" align="center">
+<h1><font color="#601038"><font face="Comic Sans MS">Quantum Computing and Related Topics</font></font></h1>
+<h2><font color="#400080"><font face="Times New Roman" ,=""> (under construction)</font></font></h2>
+<h2><font color="#000000"><font face="Times New Roman" ,="">2. Definitions etc.</font></font></h2>
+</td>
+<td valign="top" align="right"><img src="../Img/SU2.GIF"></td>
+</tr></tbody></table>
+</div>
+
+<br>
+<br>
+<h3 align="left">d. 2-qubit transformations</h3>
+<table border="0" cellspacing="0" cellpadding="10" width="1200"><tbody><tr><td valign="top" align="left" width="50%">
+<p>For 2 qubit states the basis vectors |0&gt;, |1&gt;, |2&gt;, |3&gt; are:</p>
+<center>
+<img src="../Img/e2dii0.GIF">
+</center>
+<p>The unitary matrices are now 4 × 4 matrices. For example:</p>
+<center>
+<img src="../Img/e2dii1.GIF">
+</center>
+<p>This flips both qubits and so is a "NOT" gate denoted by <b>U</b><sub><i>NOT</i></sub>, i.e.</p>
+<center>
+<img src="../Img/e2dii2.GIF">
+</center>
+<p>&nbsp;</p>
+<center>
+<img src="../Img/e2dii3.GIF">
+</center>
+<p>This flips qubit 2 only, e.g.</p>
+<center>
+<img src="../Img/e2dii4.GIF">
+</center>
+<p>&nbsp;</p>
+<center>
+<img src="../Img/e2dii5.GIF">
+</center>
+<p>This flips qubit 2 if and only if qubit 1 is in the state |1&gt;. This is a "controlled NOT gate", 
+and is usually denoted as <b>C</b><sub><i>NOT</i></sub>, e.g.</p>
+<center>
+<img src="../Img/e2dii6.GIF">
+</center>
+<p>but</p>
+<center>
+<img src="../Img/e2dii7.GIF">
+</center>
+
+</td><td valign="top" align="left">
+
+<center>
+<img src="../Img/e2dii8.GIF">
+</center>
+<p>This flips qubit 1 if and only if qubit 2 is in the state |1&gt;. This is also a controlled NOT gate, 
+and we denote it by <b>C</b>'<sub><i>NOT</i></sub>. Thus</p>
+<center>
+<img src="../Img/e2dii9.GIF">
+</center>
+<p>but</p>
+<center>
+<img src="../Img/e2dii10.GIF">
+</center>
+<p>&nbsp;</p>
+<center>
+<img src="../Img/e2dii11.GIF">
+</center>
+<p>This interchanges the two qubits and is denoted as <b>U</b><sub><i>switch</i></sub>. This can be obtained 
+from a combination of <b>C</b><sub><i>NOT</i></sub> and <b>C</b>'<sub><i>NOT</i></sub>, i.e.</p>
+<center><b>U</b><sub><i>switch</i></sub>&nbsp; = &nbsp;<b>C</b><sub><i>NOT</i></sub> <b>C</b>'<sub><i>NOT</i></sub> <b>C</b><sub><i>NOT</i></sub>
+</center>
+<p>Any <i>L</i> qubit unitary matrix can be constructed out of outer products of these single qubit unitary 
+matrices (or their matrix products). However they will not in general be a single outer product of these 
+2 × 2 unitary matrices, but may be a sum of such outer products (this is known as a "tensor product"). </p>
+
+<p>In the above examples of 2 qubit unitary operators we have</p>
+<center>
+<img src="../Img/e2dii12.GIF">
+</center>
+<p>The last is an example of such a tensor product.</p>
+
+<p>A unitary matrix representing the transformation of an 1 qubit system is a matrix in the outer product space</p>
+<center>
+<img src="../Img/e2dii13.GIF">
+</center>
+<p>If the transformation acts on each qubit separately then the matrix can be written as an outer product of 
+a 2 × 2 matrix on each <i>C</i><sup>2</sup> space for each qubit. If, on the other hand, the transformation 
+involves the interaction between qubits, as is the case for the controlled NOT gate, then the unitary matrix is 
+not a single outer product of matrices acting on each qubit, but a linear superposition of such outer products.</p>
+
+<p>In general, a physical device can in principle be constructed that performs any of these unitary 
+transformations. In the case of spin-½ particles we use the techniques of NMR (Nuclear Magnetic Resonance) 
+to illustrate the construction of 'gedanken' devices, as is described <a href="http://www.qtc.ecs.soton.ac.uk/lecture2/p6.html" target="top">later</a>.</p>
+
+</td></tr>
+<tr><td>&nbsp;</td><td align="right"><b><a href="http://www.qtc.ecs.soton.ac.uk/lecture2/p2e.html" target="top">cont.</a></b></td></tr></tbody></table>
+<br><br>
+<center>
+<map name="nav"><area shape="RECT" coords="40,5,100,75" href="http://www.qtc.ecs.soton.ac.uk/lecture2/p2di.html" target="top"><area shape="RECT" coords="130,5,180,75" href="http://www.qtc.ecs.soton.ac.uk/lecture2/f1.html" target="main"><area shape="RECT" coords="210,5,250,75" href="http://www.qtc.ecs.soton.ac.uk/lecture2/p2e.html" target="top"></map>
+<img src="../Img/navbar5.GIF" usemap="#nav" border="0">
+</center>
+</body></html>
