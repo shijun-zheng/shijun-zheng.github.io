@@ -264,6 +264,45 @@ i\partial_t\Psi=\Big[-\frac{i}{\varepsilon}\sum_{j=1}^{d}\alpha_j
   <!li><! The assignments is to show how Matlab/C++/python can solve multivariable calculus/PDE problems
 which would not be reasonable to do by hand. &nbsp; &nbsp; only scratching the surface of such a scheme><!/li>
 
+<br><center>
+<table border="0" cellpadding="10" cellspacing="10" cols="2" width="55%">
+
+<tbody>
+    <tr>
+      <td align="center" width="45%"><br>
+&nbsp;&nbsp;<!img style="border: 0px solid ; width: 239px; height: 155px;" alt="" src="../image/geom.gif"><br>
+      </td>
+<br><td>
+     \(\frac{u(x+h,y)-2u(x,y)+u(x-h,y)}{h^2}+\frac{u(x,y+k)-2u(x,y)+u(x,y-k)}{k^2}=f(x,y) 
+      </td> 
+      <br>  
+      <br><br>     
+ <td align="center" bgcolor="#ffffbb" width="45%"><i>matrix for 2D laplacian</i>&nbsp; \(\Delta u=f\)<br><br> 
+ <br> 
+<p>\(
+ \begin{bmatrix}  4 &-1 & 0 & -1 & 0 & 0 & 0 & 0 &0 \\
+                  -1 &4 &-1 & 0  &-1 & 0 & 0 & 0 &0 \\  
+                  0  &-1 &4 & 0  & 0 & -1 &0 & 0 &0 \\     
+                  -1 &0 &0 & 4  &-1 & 0  &-1 & 0 &0\\  
+                  0  &-1 &0 &-1 &4  &-1  &0  &-1 &0\\ 
+                  0  &0 &-1 &0  &-1 &4  &0   &0 &-1\\ 
+                  0  &0 &0  &-1 &0  &0  &4  &-1 &0\\
+                  0  &0 &0  &0  &-1 &0  &-1  &4 &-1\\  
+                  0  &0 &0  &0  &0  &-1 &0   &-1 &4
+  \end{bmatrix}
+  \)
+   </p><br>&nbsp;<a href="https://courses.cs.ut.ee/MTAT.08.010/2013_fall/uploads/Main/FDM.pdf">Finite difference</a>&nbsp;
+<br>
+<a href="http:// ">time splitting fourier pseudo-spectral method</a>
+or <a href="https://www.alpertron.com.ar/CONTFRAC.HTM">imaginary time evolution computing</a>
+      <br>
+      <br>
+ </td>
+    </tr>
+  </tbody>
+</table>
+</center>  
+  
 <li> <!a href="http://www.math.sc.edu/~shijun/15.0html">Here</a> 
 are some <i>resources on computational analysis</i>
 </li>
