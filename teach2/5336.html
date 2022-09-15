@@ -20,9 +20,10 @@ Phone: 8 1338<br>
   <script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 <!--/head><body-->
-<p>
-  Numerical method solving 
-\begin{equation*}
+<!p>
+  Numerical solution &nbsp;&nbsp;<img src="../image/angOmV(half,11)p6_1p565Q(0;11)_b.png" height="198" width="328">
+<br>	  
+<p>\begin{equation*}
   \begin{aligned} 
   \displaystyle {\mathbf{i}}\hbar \partial _t\varphi _1({\mathbf{x}}, t)&=  {} 
   \displaystyle \left[ -\frac{\hbar ^2}{2m}\nabla ^2+V({\mathbf{x}}) +E_1+c_0|\Phi |^2+ c_2(|\varphi _1|^2+|\varphi _0|^2-|\varphi _{-1}|^2) 
@@ -36,9 +37,8 @@ Phone: 8 1338<br>
   \end{aligned}  
   \end{equation*}
 </p>
-<!--/body>
 
-Fixed point scheme
+Fixed point method
 <p> 
  \begin{align*} 
  & p_{n+1}=p_n-\frac{f(p_n)}{f'(p_n)}
@@ -70,16 +70,18 @@ Fixed point scheme
 border=0-->
       </td>
       <td align="center" bgcolor="#ffffbb" width="30%"> 
-     \( [t,y]=ModifiedEuler(a,b,y0,N)\) \quad sloves Diff. Eqn.<br><br>
-   \(   \frac{dy}{dt} =y-t^{2}+1,  \qquad y(0)=0.5\)
+     \begin{verbatim} 
+	      [t,y]=ModifiedEuler(a,b,y0,N)\) \quad sloves Diff. Eqn.<br><br>
+      \frac{dy}{dt} =y-t^{2}+1,    y(0)=0.5
+	      \end{verbatim}
         <br><br><br><br>
 The universe is written in the language of mathematics (Galileo) </td>
       <br>
-      <td style="text-align: center;"><img src="../image/PDE.random-process.gif" height="200" width="306">&nbsp;&nbsp;&nbsp;
-<!--img src=http://math.georgiasouthern.edu/~szheng/image/calculus.jpg border=0--><br>
-&nbsp;&nbsp;&nbsp;<!--img src="http://math.georgiasouthern.edu/~szheng/image/geom.gif"
-border=0-->
-      </td>
+      <!--td style="text-align: center;"><img src="../image/PDE.random-process.gif" height="200" width="306">&nbsp;&nbsp;&nbsp;
+<../image/calculus.jpg border=0-->
+	<br>
+&nbsp;&nbsp;&nbsp; <!border=0>
+      <!/td>
     </tr>
   </tbody>
 </table>
