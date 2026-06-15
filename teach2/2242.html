@@ -1,7 +1,47 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><title>Math 2242 (Instructor: Dr.~John Shijun Zheng)</title></head><body style="background-color: navajowhite;">
 <br>
+<!html code for latex syntax of math equations/symbols><!br> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX in HTML with MathJax</title>
+    
+    <!-- Load MathJax from a Content Delivery Network (CDN) -->
+    <script src="https://jsdelivr.net"></script>
+    
+    <!-- Optional: Inline configuration to prevent common rendering clashes -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
 
+    <!-- 1. Inline Math (for formulas inside regular sentences) -->
+    <p>Let $x$ and $y$ be the sides of a right-angled triangle. According to the Pythagorean theorem, the hypotenuse is $c = \sqrt{x^2 + y^2}$.</p>
+
+    <!-- 2. Displayed Math (centered equations on a new line) -->
+    <p>The solution to the quadratic equation is given by the following formula:</p>
+    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+    <p>Euler's identity is one of the most famous formulas in mathematics:</p>
+    $$e^{i\pi} + 1 = 0$$
+
+
+\[\int_{a}^{b} u \, dv = [uv]_{a}^{b} - \int_{a}^{b} v \, du\] 
+
+\[S_{n}=\frac{a(1-r^{n})}{1-r}\quad (\text{or\ }\frac{a(r^{n}-1)}{r-1})\]
+
+</body>
+</html> 
+ 
 <center>
 <h2>Math 2242 &nbsp; (Dr. J. S. Zheng) </h2>
 <br>
