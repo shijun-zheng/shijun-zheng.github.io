@@ -40,7 +40,7 @@ MathJax.Hub.Config({
 });
 </script><! this is overall (global) enlarging fontsize by 'scale' method for MathJax text/equations>
 
-<br> 
+<!br> 
 <!-- script type="text/javascript" async
 src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script> ->
@@ -61,7 +61,10 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <body>
-<p>\[S_{n}=\frac{a(1-r^{n})}{1-r}{=}\frac{a(r^{n}-1)}{r-1})\]
+<p>\begin{align*}
+	S_{N}:=&\sum_{n=0}^N ar^n=\frac{a(1-r^{N})}{1-r}{=}\frac{a(r^{N}-1)}{r-1})\To\\
+	\sum_{n=0}^\infty ar^n=&\frac{a}{1-r}=\frac{\text{leading term}}{1-r}\qquad \text{if \(|r|<1\)} 
+	\end{align*}
 </p>
 	
 <br><br> 
