@@ -41,13 +41,26 @@ MathJax.Hub.Config({
 </script><! this is overall (global) enlarging fontsize by 'scale' method for MathJax text/equations>
 
 <br> 
-<script type="text/javascript" async
+<!-- script type="text/javascript" async
 src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+</script> ->
+
+<!html>
+  <!head>
+    <!-- See http://docs.mathjax.org/en/latest/web/start.html#using-mathjax-from-a-content-delivery-network-cdn -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  <!/head>
+<!body>		
 <p> 
 \[\int_{a}^{b} u \, dv = [uv]_{a}^{b} - \int_{a}^{b} v \, du\] 
 </p><br>
+</body>
+</html>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<body>
 <p>\[S_{n}=\frac{a(1-r^{n})}{1-r}\quad (\text{or\ }\frac{a(r^{n}-1)}{r-1})\]
 </p>
 	
